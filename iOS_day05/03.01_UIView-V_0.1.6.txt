@@ -1,0 +1,952 @@
+
+/*
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *
+ * Copyleft (C) 2009-2015
+ * COEO - China Open Education Organization
+ * "+++New Life+++" Team for Computer Science
+ * Free as in freedom. The Truth Will Free You.
+ * 张开自由的翅膀，真理要释放你。
+ * To teach the inexperienced the ropes 
+ * and give our young people a grasp on reality.
+ * 教导没有经验的得以丰富，给予青年人开启真理的钥匙。
+ * The old life is gone; a new life burgeons!
+ * 告别飘逝的过去，拥抱怒放的新生！
+ *
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *
+ * This file is available to you under a choice of one of two licenses.
+ *
+ * GPL
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 as published
+ * by the Free Software Foundation.
+ *
+ * THE FILE IS DISTRIBUTED AS-IS, WITHOUT WARRANTY OF ANY KIND, AND THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE
+ * ARE EXPRESSLY DISCLAIMED.
+ *
+ * See the GNU General Public License * for more details.
+ *
+ * http://www.opensource.org/licenses/gpl-license.html
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * 
+ * BSD
+ *
+ *  Alternatively you can redistribute this file under the terms of the
+ *  BSD license as stated below:
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions
+ *  are met:
+ *  1. Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *  2. Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *  3. The names of its contributors may not be used to endorse or promote
+ *     products derived from this software without specific prior written
+ *     permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ *  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ *  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ *  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ *  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ *  TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ *  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ *  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *
+ * Description:
+ *     This file describe UIView.
+ *
+ * Original Date:
+ *     Dec-30-2014
+ *
+ * Modified Date:
+ *     Feb-02-2015
+ *
+ * Authors:
+ *     Yuhui    <abrahambenyu@gmail.com>
+ *
+ * Current Version:
+ *     0.1.6
+ *
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Table of Contents
+=================
+
+    01. UIView - Lots of
+    02. Class Exercises - UIView
+    03. UIImageView
+    04. Mvc - Operation Names
+    05. Real Project - Switch
+    06. Homework
+    07. Traps and Pitfalls
+    08. Diligence
+
+
+01. UIView - Lots of
+
+    1.01  Introduction
+
+    1.02  New Project
+
+          1.2.01  New Project
+
+                  Day03_01_UIView
+
+          1.2.02  ARC Setting
+
+          1.2.03  New File for My ViewController
+
+                  01. 先鼠标左键点击，AppDelegate.m；
+                  02. File --> New --> File --> iOS --> Cocoa Touch；
+                  03. --> Objective-C Class --> Next；
+                  04. --> Subclass of: UIViewController；
+                  05. --> Class: MainViewController
+                  06. --> Next --> 位置 --> Create.
+
+    1.03  Source Code
+
+          1.3.01  AppDelegate.m
+
+                  (1) #import "MainViewController.h"
+
+                  - (BOOL)application:(UIApplication *)application
+                      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+                  {
+                      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+                      // Override point for customization after application launch.
+
+                  (2) MainViewController *main = [[MainViewController alloc]init];
+                  (3) self.window.rootViewController = main;
+                  (4) [main release];
+
+                      self.window.backgroundColor = [UIColor whiteColor];
+                      [self.window makeKeyAndVisible];
+                      return YES;
+                  }
+
+          1.3.02  viewDidLoad - view1 Basics
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                  (1) [self viewExample1];
+                  }
+
+                  (2) - (void)viewExample1
+                  {
+                      // 基本属性的用法
+                  (3) UIView *view1 = [[UIView alloc]
+                                       initWithFrame:CGRectMake(10, 30, 100, 100)];
+                  (4) view1.backgroundColor = [UIColor yellowColor];
+                  (5) [self.view addSubview:view1];
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          1.3.03  viewDidLoad - view1 frame Property and Modify
+
+                  - (void)viewExample1
+                  {
+                      // 基本属性的用法
+                      // ...
+
+                      // frame 属性的用法
+                  (1) NSLog(@"view1.frame %f, %f, %f, %f",
+                            view1.frame.origin.x, view1.frame.origin.y,
+                            view1.frame.size.width, view1.frame.size.height);
+
+                      // UIView 的 frame 的成员属性是只读的
+                      // 所以下面的代码是编译不过的
+                  (2) // view1.origin.x = 100;
+
+                      // frame 本身是可读可写的，但 frame 的成员是只读的，不能修改
+                      // 所以，要想改变坐标，就要通过一个中间变量，来赋值给 frame
+                  (3) CGRect frame = view1.frame;
+
+                      // 可以用下面这种方式修改
+                  (4) frame.origin.x = 100;
+                  (5) view1.frame = frame;
+                 }
+
+                  Building, Troubleshooting, Thinking
+
+          1.3.04  viewDidLoad - view1 bounds and center
+
+                  - (void)viewExample1
+                  {
+                      // 基本属性的用法
+                      // ...
+
+                      // frame 属性的用法
+                      // ...
+
+                      // bounds 属性的用法
+                      // UIView 的 bounds 属性和 frame 类似
+                      // 宽高相同，但 x, y 永远是 0
+
+                  (1) NSLog(@"view1.bounds %f, %f, %f, %f",
+                            view1.bounds.origin.x, view1.bounds.origin.y,
+                            view1.bounds.size.width, view1.bounds.size.height);
+
+                      // center 属性的用法
+                      // center 表示中心点坐标
+                  (2) CGPoint point = view1.center;
+                  (3) NSLog(@"point: %f, %f", point.x, point.y);
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          1.3.05  viewDidLoad - view2
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                      [self viewExample1];
+                  (1) [self viewExample2];
+                  }
+
+                  (2) - (void)viewExample2
+                  {
+                      // z-order：是先放后放的顺序
+                      // addSubView：是后放的把先放的挡住
+                  (3) UIView *view2 = [[UIView alloc]
+                                       initWithFrame:CGRectMake(110, 40, 100, 100)];
+                  (4) view2.backgroundColor = [UIColor blueColor];
+                      // 用 addSubview 添加的子视图
+                      // 后添加的子视图的 Zorder 比先添加的子视图的 Zorder 大
+                      // 所以，后添加的会把先添加的挡住（如果二者重叠）
+                  (5) [self.view addSubview:view2];
+                  (6) [view2 release];
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          1.3.06  viewDidLoad - view3
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                      [self viewExample1];
+                      [self viewExample2];
+                  (1) [self viewExample3];
+                  }
+
+                  (2) - (void)viewExample3
+                  {
+                      // insertSubview：也是添加子视图
+                      // 添加 view3 并把 view3 放在 view1 的下边
+                      // 即 view3 的 Zorder 比 view1 的 Zorder 小
+                  (3) UIView *view3 = [[UIView alloc]
+                                       initWithFrame:CGRectMake(90, 20, 100, 100)];
+                  (4) view3.backgroundColor = [UIColor redColor];
+                      // 把 view1 改成类内的全局变量
+                  (5) [self.view insertSubview:view3 belowSubview:view1];
+                      // 把 view3 移到最上边
+                      // 这里的最上边是相对 view3 父视图的其它子视图而言的
+                  (6) [self.view bringSubviewToFront:view3];
+                      // 把 view3 移到最下边
+                      // 这里的最上边是相对 view3 父视图的其它子视图而言的
+                  (7) [self.view sendSubviewToBack:view3];
+                      // insertSubview 和 bringSubview 只是调整现存在的 view
+                  (8) [view3 release];
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          1.3.07  viewDidLoad - view4
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                      [self viewExample1];
+                      [self viewExample2];
+                      [self viewExample3];
+                  (1) [self viewExample4];
+                  }
+
+                  (2) - (void)viewExample4
+                  {
+                  (3) UIView *view4 = [[UIView alloc]
+                                       initWithFrame:CGRectMake(20, 150, 150, 150)];
+                  (4) view4.backgroundColor = [UIColor greenColor];
+                  (5) view4.tag = 100;
+                  (6) [self.view addSubview:view4];
+
+                      // 指定视图 view4 的子视图是否随着 view4 的大小改变而自动改变
+                  (7) view4.autoresizesSubviews = NO;
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          1.3.08  viewDidLoad - view5
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                      [self viewExample1];
+                      [self viewExample2];
+                      [self viewExample3];
+                      [self viewExample4];
+                  (1) [self viewExample5];
+                  }
+
+                  (2) - (void)viewExample5
+                  {
+                  (3) UIView *view5 = [[UIView alloc]
+                                       initWithFrame:CGRectMake(10, 10, 130, 130)];
+                  (4) view5.backgroundColor = [UIColor blackColor];
+                      // 把 view4 改成类内的全局变量
+                  (5) [view4 addSubview:view5];
+                      // 指定当 view 的父视图改变大小时子视图的宽和高随着自动改变大小
+                  (6) view5.autoresizingMask = UIViewAutoresizingFlexibleWidth |
+                          UIViewAutoresizingFlexibleHeight;
+
+                  (7) [view5 release];
+                  (8) [view4 release];
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          1.3.09  viewDidLoad - button
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                      [self viewExample1];
+                      [self viewExample2];
+                      [self viewExample3];
+                      [self viewExample4];
+                      [self viewExample5];
+                  (1) [self myButton];
+                  }
+
+                  (2) - (void)myButton
+                  {
+                  (3) UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                  (4) button.frame = CGRectMake(120, 360, 80, 30);
+                  (5) [button setTitle:@"放大" forState:UIControlStateNormal];
+                  (6) [button addTarget:self action:@selector(onButtonClick)
+                          forControlEvents:UIControlEventTouchUpInside];
+                  (7) [self.view addSubview:button];
+
+          1.3.10  Implement Click Button Zoom Window
+
+                  (1) - (void)onButtonClick
+                  {
+                      // 得到 self.view 的 tag 值为 100 的子视图
+                  (2) UIView *view = [self.view viewWithTag:100];
+
+                  (3) CGRect frame = view.frame;
+                  (4) frame.size.width  += 10;
+                  (5) frame.size.height += 10;
+                  (6) view.frame = frame;
+                  }
+
+          1.3.11  subviews
+
+                  subviews 表示视图 self.view 的所有子视图，请看下面两行等价的代码：
+                  NSArray *subViews = [self.view subviews];
+                  NSArray *subViews = self.view.subviews;
+
+    1.04  Class Exercises
+
+    1.05  Conclusion
+
+02. Class Exercises - UIView
+
+    2.01  Introduction
+
+          01. 现在，我们学习了 UIView，那么我们来做个练习，这样才能检验我们是否学会了；
+          02. 我们下面这个练习很简单，但是很有用，既能复习前两节的课程，又能把新知识加进去；
+          03. 做一个 Button，和一个 Label，一点击 Button，然后 Label 就变大，而 Button 却减小。
+
+    2.02  New Project
+
+          2.2.01  New Project
+
+                  Day03_02_UIView_Exercises
+
+          2.2.02  ARC Setting
+
+          2.2.03  New File for My ViewController
+
+                  01. 先鼠标左键点击，AppDelegate.m；
+                  02. File --> New --> File --> iOS --> Cocoa Touch；
+                  03. --> Objective-C Class --> Next；
+                  04. --> Subclass of: UIViewController；
+                  05. --> Class: MainViewController
+                  06. --> Next --> 位置 --> Create.
+
+    2.03  Source Code
+
+          2.3.01  AppDelegate.m
+
+                  (1) #import "MainViewController.h"
+
+                  - (BOOL)application:(UIApplication *)application
+                      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+                  {
+                      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+                      // Override point for customization after application launch.
+
+                  (2) MainViewController *main = [[MainViewController alloc]init];
+                  (3) self.window.rootViewController = main;
+                  (4) [main release];
+
+                      self.window.backgroundColor = [UIColor whiteColor];
+                      [self.window makeKeyAndVisible];
+                      return YES;
+                  }
+
+          2.3.02  viewDidLoad - Label
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                  (1) UILabel *label = [[UILabel alloc]init];
+                  (2) label.frame = CGRectMake(10, 40, 100, 30);
+                  (3) label.backgroundColor = [UIColor greenColor];
+                  (4) label.text = @"你越是谦卑，你就学的越多！";
+                  (5) [self.view addSubview:label];
+                  (6) label.tag = 100;
+                  (7) [label release];
+                  }
+
+          2.3.03  viewDidLoad - Button
+
+                  (1) UIButton *button = [[UIButton alloc]init];
+                  (2) button.frame = CGRectMake(10, 200, 200, 200);
+                  (3) button.backgroundColor = [UIColor blueColor];
+                  (4) [button setTitle:@"点我" forState:UIControlStateNormal];
+                  (5) [button setTitle:@"好疼" forState:UIControlStateHighlighted];
+                  (6) [button addTarget:self action:@selector(onButtonClick)
+                          forControlEvents:(UIControlEventTouchUpInside)];
+                  (7) [self.view addSubview:button];
+                  (8) button.tag = 200;
+                  (9) [button release];
+                  }
+
+          2.3.04  onButtonClick
+
+                  - (void)onButtonClick
+                  {
+                  (1) NSLog(@"你给我小心着点！\n");
+    
+                  (2) NSArray *subViews = self.view.subviews;
+                  (3) for (UIView * view in subViews) {
+                  (4)     if ([view isKindOfClass:[UILabel class]]) {
+                  (5)         CGRect frame = view.frame;
+                  (6)         frame.size.width  += 10;
+                  (7)         frame.size.height += 10;
+                  (8)         view.frame = frame;
+                  (9)     } else if ([view isKindOfClass:[UIButton class]]) {
+                  (10)        CGRect frame = view.frame;
+                  (11)        frame.size.width -= 10;
+                  (12)        frame.size.height -= 10;
+                  (13)        view.frame = frame;
+                          }
+                      }
+                  }
+
+    2.04  Class Exercises
+
+    2.05  Conclusion
+
+03. UIImageView
+
+    3.01  Introduction
+
+          01. 来个图片的处理吧！怎么样？
+          02. 先做一个以一张图片为背景的情况吧；
+          03. 然后，再做一个动画，还是有什么有趣的事情可以来做的。
+
+    3.02  New Project
+
+          3.2.01  New Project
+
+                  Day03_03_UIImageView
+
+          3.2.02  ARC Setting
+
+          3.2.03  New File for My ViewController
+
+                  01. 先鼠标左键点击，AppDelegate.m；
+                  02. File --> New --> File --> iOS --> Cocoa Touch；
+                  03. --> Objective-C Class --> Next；
+                  04. --> Subclass of: UIViewController；
+                  05. --> Class: MainViewController
+                  06. --> Next --> 位置 --> Create.
+
+    3.03  Source Code
+
+          3.3.01  AppDelegate.m
+
+                  (1) #import "MainViewController.h"
+
+                  - (BOOL)application:(UIApplication *)application
+                      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+                  {
+                      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+                      // Override point for customization after application launch.
+
+                  (2) MainViewController *main = [[MainViewController alloc]init];
+                  (3) self.window.rootViewController = main;
+                  (4) [main release];
+
+                      self.window.backgroundColor = [UIColor whiteColor];
+                      [self.window makeKeyAndVisible];
+                      return YES;
+                  }
+
+          3.3.02  Drag Image Folder into Project
+
+          3.3.03  MainViewController.m - setBackgroudImage
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+    
+                  (1) [self setBackgroudImage];
+                  }
+
+                  - (void)setBackgroudImage
+                  {
+                      // 取得 project 中某个文件的路径
+                      // 参数一：文件名
+                      // 参数二：文件扩展名
+                  (1) NSString *filePath = [[NSBundle mainBundle]
+                                        pathForResource:@"map" ofType:@"png"];
+                  (2) NSLog(@"path: %@", filePath);
+
+                      // 到这里先运行看一下！
+
+                      // UIImage 支持 png 和 jpeg 两种图片（.png, .jpg, .jpeg）
+                      // iOS 中 png 格式的图片可以用 GPG 加速，尽量用 png 格式
+                      // 这种方式加载的图片不长驻内存，图片需要显示的时候从外存读取
+                      // 速度相对慢一些
+                  (3) UIImage *imageBack = [UIImage imageWithContentsOfFile:path];
+                      // 实例化 UIImageView 对象
+                  (4) UIImageView *imageViewBack = [[UIImageView alloc]
+                                                    initWithImage:imageBack];
+                  (5) imageViewBack.frame = self.view.bounds;
+                  (6) [self.view addSubview:imageViewBack];
+                  (7) [imageViewBack release];
+                  }
+
+          3.3.04  animationTom
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                      [self setBackgroudImage];
+
+                  (1) [self animationTom];
+                  }
+
+                  /* 下面来做一个汤姆猫的动画 */
+                  - (void)animationTom
+                  {
+                      // 加载组成动画的图片
+                  (1) NSMutableArray *images = [[NSMutableArray alloc]init];
+
+                  (2) for (int page = 1; page <= 28; ++page) {
+                  (3)     NSString *imageName = [NSString
+                              stringWithFormat:@"tom_%d.jpg", page];
+                  (4)     UIImage *image = [UIImage imageNamed:imageName];
+                  (5)     [images addObject:image];
+                      }
+
+                      // 注意：下面的语句，不要写在 for 循环内，效率！
+
+                  (6) UIImageView *imageViewAnimation = [[UIImageView alloc]
+                          initWithFrame:CGRectMake(40, 40, 240, 360)];
+                      // 指定动画显示的图片
+                  (7) imageViewAnimation.animationImages = images;
+                      // 指定组成动画的图片从头到尾显示一遍的时间，以秒为单位
+                  (8) imageViewAnimation.animationDuration = 3;
+                      // 指定动画重复的次数，默认为永远
+                  (12) //imageViewAnimation.animationRepeatCount = 2;
+
+                      // 开始动画
+                  (9) [imageViewAnimation startAnimating];
+                      // 停止动画
+                  (13) //[imageViewAnimation stopAnimating];
+                  (10) [self.view addSubview:imageViewAnimation];
+                  (11) [imageViewAnimation release];
+                  }
+
+    3.04  Class Exercises
+
+    3.05  Conclusion
+
+04. MVC - Operation Names
+
+    4.01  Introduction
+
+          01. MVC 全名是 Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写；
+          02. 一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码；
+          03. 将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑；
+          04. MVC被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结构中。
+
+    4.02  Project Introduction
+
+          01. 接下来呢，我们来学习一个工业级的的架构设计，MVC；
+          02. 现在我们可能还感受不到 MVC 的好处，但是先熟练一下；
+          03. 我们记信用 MVC 架构有很多好处，用它就得建 Model；
+          04. 我们来显示十个序列的名子。
+
+    4.03  New Project
+
+          4.3.01  New Project
+
+                  Day03_04_MVC
+
+          4.3.02  ARC Setting
+
+          4.3.03  New File for My ViewController
+
+                  01. 先鼠标左键点击，AppDelegate.m；
+                  02. File --> New --> File --> iOS --> Cocoa Touch；
+                  03. --> Objective-C Class --> Next；
+                  04. --> Subclass of: UIViewController；
+                  05. --> Class: MainViewController
+                  06. --> Next --> 位置 --> Create.
+
+    4.04  Source Code
+
+          4.4.01  AppDelegate.m
+
+                  (1) #import "MainViewController.h"
+
+                  - (BOOL)application:(UIApplication *)application
+                      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+                  {
+                      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+                      // Override point for customization after application launch.
+
+                  (2) MainViewController *mainVC = [[MainViewController alloc]init];
+                  (3) self.window.rootViewController = mainVC;
+                  (4) [main release];
+
+                      self.window.backgroundColor = [UIColor whiteColor];
+                      [self.window makeKeyAndVisible];
+                      return YES;
+                  }
+
+          4.4.02  Create Model for MVC
+
+                  01. 先鼠标左键点击，AppDelegate.m；
+                  02. File --> New --> File --> iOS --> Cocoa Touch；
+                  03. --> Objective-C Class --> Next；
+                  04. --> Subclass of: NSObject；
+                  05. --> Class: Model
+                  06. --> Next --> 位置 --> Create.
+
+          4.4.03  Model.h
+
+                  #import <Foundation/Foundation.h>
+
+                  @interface Model : NSObject
+                  {
+                  (1) NSMutableArray *_personNames;
+                  }
+
+                      // 初始化并生成 10 个人的名字
+                  (2) - (id)init;
+                      // 取得指定索引（下标）的名字
+                  (3) - (NSString *)personNameWithIndex:(NSInteger)index;
+
+                  @end
+
+          4.4.04  Model.m - init
+
+                  #import "Model.h"
+
+                  @implementation Model
+
+                      /* 初始化并生成 10 个人的名字 */
+                  (1) - (id)init
+                      {
+                  (2)     self = [super init];
+                  (3)     if (self) {
+                  (4)         _personNames = [[NSMutableArray alloc]init];
+                  (5)         for (NSInteger i = 0; i < 10; ++i) {
+                  (6)             NSString *name = [NSString stringWithFormat:@"name%d", i];
+                  (7)             [_personNames addObject:name];
+                  (8)         }
+                          }
+                  (9)     return self;
+                      }
+
+                  @end
+
+          4.4.05  Model.m - personNameWithIndex
+
+                  #import "Model.h"
+
+                  @implementation Model
+
+                      /* 初始化并生成 10 个人的名字 */
+                  - (id)init
+                  // ... ...
+
+                      /* 取得指定索引（下标）的名字 */
+                  (1) - (NSString *)personNameWithIndex:(NSInteger)index
+                      {
+                  (2)     return _personNames[index];
+                      }
+
+                  @end
+
+          4.4.06  Model.m - dealloc
+
+                  #import "Model.h"
+
+                  @implementation Model
+
+                      /* 初始化并生成 10 个人的名字 */
+                  - (id)init
+                  // ... ...
+
+                      /* 取得指定索引（下标）的名字 */
+                  - (NSString *)personNameWithIndex:(NSInteger)index
+                  // ... ...
+
+                  (1) - (void)dealloc
+                      {
+                  (2)     [_personNames release];
+                  (3)     [super dealloc];
+                      }
+
+                  @end
+
+          4.4.07  MainViewController.m - include & declaration
+
+                  #import "MainViewController.h"
+                  (1) #import "Model.h"
+
+                  @implementation MainViewController
+                  {
+                  (2) Model *_personInfo;
+                  }
+
+          4.4.08  MainViewController.m - viewDidLoad
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+    
+                  (1) _personInfo = [[Model alloc]init];
+
+                  (2) for (NSInteger i = 0; i < 10; ++i) {
+                  (3)     UILabel *label = [[UILabel alloc]
+                              initWithFrame:CGRectMake(30, 40+40*i, 150, 30)];
+                  (4)     label.text = [_personInfo personNameWithIndex:i];
+                  (5)     [self.view addSubview:label];
+                  (6)     [label release];
+                      }
+                  }
+
+          4.4.09  MainView - dealloc
+
+                  (1) - (void) dealloc
+                      {
+                  (2)     [_personInfo release];
+                  (3)     [super dealloc];
+                      }
+
+    4.05  Class Exercises
+
+    4.06  Conclusion
+
+05. Real Project - Switch
+
+    5.01  Introduction
+
+          01. 接下来呢，我们来学习一个工业级的的架构设计，MVC；
+          02. 现在我们可能还感受不到 MVC 的好处，但是先熟练一下；
+          03. 我们记信用 MVC 架构有很多好处，用它就得建 Model；
+          04. 我们来显示十个序列的名子。
+
+    5.02  New Project
+
+          5.2.01  New Project
+
+                  Day03_05_Switch
+
+          5.2.02  ARC Setting
+
+          5.2.03  New File for My ViewController
+
+                  01. 先鼠标左键点击，AppDelegate.m；
+                  02. File --> New --> File --> iOS --> Cocoa Touch；
+                  03. --> Objective-C Class --> Next；
+                  04. --> Subclass of: UIViewController；
+                  05. --> Class: MainViewController
+                  06. --> Next --> 位置 --> Create.
+
+    5.03  Source Code
+
+          5.3.01  AppDelegate.m
+
+                  (1) #import "MainViewController.h"
+
+                  - (BOOL)application:(UIApplication *)application
+                      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+                  {
+                      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+                      // Override point for customization after application launch.
+
+                  (2) MainViewController *main = [[MainViewController alloc]init];
+                  (3) self.window.rootViewController = main;
+                  (4) [main release];
+
+                      self.window.backgroundColor = [UIColor whiteColor];
+                      [self.window makeKeyAndVisible];
+                      return YES;
+                  }
+
+          5.3.02  Create Three Labels
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                  (1) [self createLabels];
+                  }
+
+                  (2) - (void)createLabels
+                  {
+                      // 存储 Label 上的字
+                  (3) NSArray *texts = @[@"Red", @"Blue", @"Green"];
+                      // 存储 Label 上的颜色
+                  (4) NSArray *colors = @[[UIColor redColor], [UIColor blueColor],
+                        [UIColor greenColor]];
+    
+                      // 循环创建三个 Label
+                  (5) for (NSInteger i = 0; i < 3; ++i) {
+                  (6)     UILabel *label = [[UILabel alloc]
+                              initWithFrame:CGRectMake(30+i*20, 50+i*20, 150, 90)];
+                  (7)     label.text = texts[i];
+                  (8)     label.textAlignment = NSTextAlignmentCenter;
+                  (9)     label.backgroundColor = colors[i];
+                  (10)    label.tag = 10 + i;
+                  (11)    [self.view addSubview:label];
+                  (12)    [label release];
+                      }
+                  }
+
+          5.3.03  Create _currentTag
+
+                  @implementation MainViewController
+                  {
+                      // 表示当前最上面的 Tag
+                  (1) NSInteger _currentTag;
+                  }
+
+                  - (void)createLabels
+                  {
+                      for (NSInteger i = 0; i < 3; ++i) {
+                          // ... ...
+                      }
+                      /*
+                       * 因为刚创建完时绿色 Label 在最上面（tag 值为 12）
+                       * 所以当前 Label 的 tag 值为 12
+                       */
+                  (2) _currentTag = 12;
+                  }
+
+          5.3.04  Create Two Buttons
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                      [self createLabels];
+                  (1) [self createButtons];
+                  }
+
+                  (2) - (void)createLabels
+                  {
+                      // 循环创建两个按钮
+                  (3) NSArray *titles = @[@"上一张", @"下一张"];
+                  (4) for (NSInteger i = 0; i < 2; ++i) {
+                  (5)     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                  (6)     button.frame = CGRectMake(40+i*120, 350, 80, 30);
+                  (7)     [button setTitle:titles[i] forState:UIControlStateNormal];
+                  (8)     button.tag = i + 100;
+                  (9)     [button addTarget:self action:@selector(onButtonClick:)
+                              forControlEvents:UIControlEventTouchUpInside];
+                  (10)    [self.view addSubview:button];
+                      }
+
+          5.3.05  onButtonClick
+
+                  - (void)onButtonClick:(UIButton *)sender
+                  {
+                      // 下一张，按钮的处理事件
+                  (1) if (101 == sender.tag) {
+                  (3)     UIView *view = [self.view viewWithTag:_currentTag];
+                  (4)     [self.view  sendSubviewToBack:view];
+                          // 下一个 Label 变成当前的
+                  (5)     --_currentTag;
+                          // 到头之后重新循环
+                  (6)     if (_currentTag < 10) {
+                  (7)         _currentTag = 12;
+                          }
+
+                      // 上一张，按钮的处理事件
+                  (2) } else if (100 == sender.tag) {
+                  (7)     ++_currentTag;
+                          // 到头之后重新循环
+                  (8)     if (_currentTag > 12) {
+                  (9)         _currentTag = 10;
+                          }
+                  (10)    UIView *view = [self.view viewWithTag:_currentTag];
+                  (11)    [self.view  bringSubviewToFront:view];
+                          // 上一个 Label 变成当前的
+                      }
+                  }
+
+06. Homework
+
+    6.01  点击 Next 按钮，随机改变几条蓝色视图的宽度，目的是初步体会 MVC 效果图。
+
+07. Traps and Pitfalls
+
+08. Diligence

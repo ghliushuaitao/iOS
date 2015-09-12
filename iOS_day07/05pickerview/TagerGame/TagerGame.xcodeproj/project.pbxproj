@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9870D8041B12B5570028604F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9870D8031B12B5570028604F /* main.m */; };
+		9870D8071B12B5570028604F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9870D8061B12B5570028604F /* AppDelegate.m */; };
+		9870D80A1B12B5570028604F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9870D8091B12B5570028604F /* ViewController.m */; };
+		9870D80D1B12B5570028604F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9870D80B1B12B5570028604F /* Main.storyboard */; };
+		9870D80F1B12B5570028604F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9870D80E1B12B5570028604F /* Images.xcassets */; };
+		9870D8121B12B5570028604F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9870D8101B12B5570028604F /* LaunchScreen.xib */; };
+		9870D81E1B12B5580028604F /* TagerGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9870D81D1B12B5580028604F /* TagerGameTests.m */; };
+		9870D8381B12B9650028604F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D82B1B12B9650028604F /* Default.png */; };
+		9870D8391B12B9650028604F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D82C1B12B9650028604F /* Icon.png */; };
+		9870D83A1B12B9650028604F /* image0.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D82D1B12B9650028604F /* image0.png */; };
+		9870D83B1B12B9650028604F /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D82E1B12B9650028604F /* image1.png */; };
+		9870D83C1B12B9650028604F /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D82F1B12B9650028604F /* image2.png */; };
+		9870D83D1B12B9650028604F /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D8301B12B9650028604F /* image3.png */; };
+		9870D83E1B12B9650028604F /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D8311B12B9650028604F /* image4.png */; };
+		9870D83F1B12B9650028604F /* image5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D8321B12B9650028604F /* image5.png */; };
+		9870D8401B12B9650028604F /* image6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D8331B12B9650028604F /* image6.png */; };
+		9870D8411B12B9650028604F /* image7.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D8341B12B9650028604F /* image7.png */; };
+		9870D8421B12B9650028604F /* image8.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D8351B12B9650028604F /* image8.png */; };
+		9870D8431B12B9650028604F /* image9.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D8361B12B9650028604F /* image9.png */; };
+		9870D8441B12B9650028604F /* image10.png in Resources */ = {isa = PBXBuildFile; fileRef = 9870D8371B12B9650028604F /* image10.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9870D8181B12B5580028604F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9870D7F61B12B5570028604F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9870D7FD1B12B5570028604F;
+			remoteInfo = TagerGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9870D7FE1B12B5570028604F /* TagerGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TagerGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9870D8021B12B5570028604F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9870D8031B12B5570028604F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9870D8051B12B5570028604F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9870D8061B12B5570028604F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9870D8081B12B5570028604F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9870D8091B12B5570028604F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9870D80C1B12B5570028604F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9870D80E1B12B5570028604F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9870D8111B12B5570028604F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9870D8171B12B5580028604F /* TagerGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TagerGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9870D81C1B12B5580028604F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9870D81D1B12B5580028604F /* TagerGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagerGameTests.m; sourceTree = "<group>"; };
+		9870D82B1B12B9650028604F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Default.png; sourceTree = "<group>"; };
+		9870D82C1B12B9650028604F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = "<group>"; };
+		9870D82D1B12B9650028604F /* image0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image0.png; path = Images/image0.png; sourceTree = "<group>"; };
+		9870D82E1B12B9650028604F /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image1.png; path = Images/image1.png; sourceTree = "<group>"; };
+		9870D82F1B12B9650028604F /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image2.png; path = Images/image2.png; sourceTree = "<group>"; };
+		9870D8301B12B9650028604F /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image3.png; path = Images/image3.png; sourceTree = "<group>"; };
+		9870D8311B12B9650028604F /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image4.png; path = Images/image4.png; sourceTree = "<group>"; };
+		9870D8321B12B9650028604F /* image5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image5.png; path = Images/image5.png; sourceTree = "<group>"; };
+		9870D8331B12B9650028604F /* image6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image6.png; path = Images/image6.png; sourceTree = "<group>"; };
+		9870D8341B12B9650028604F /* image7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image7.png; path = Images/image7.png; sourceTree = "<group>"; };
+		9870D8351B12B9650028604F /* image8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image8.png; path = Images/image8.png; sourceTree = "<group>"; };
+		9870D8361B12B9650028604F /* image9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image9.png; path = Images/image9.png; sourceTree = "<group>"; };
+		9870D8371B12B9650028604F /* image10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image10.png; path = Images/image10.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9870D7FB1B12B5570028604F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9870D8141B12B5580028604F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9870D7F51B12B5570028604F = {
+			isa = PBXGroup;
+			children = (
+				9870D8001B12B5570028604F /* TagerGame */,
+				9870D81A1B12B5580028604F /* TagerGameTests */,
+				9870D7FF1B12B5570028604F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9870D7FF1B12B5570028604F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9870D7FE1B12B5570028604F /* TagerGame.app */,
+				9870D8171B12B5580028604F /* TagerGameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9870D8001B12B5570028604F /* TagerGame */ = {
+			isa = PBXGroup;
+			children = (
+				9870D82B1B12B9650028604F /* Default.png */,
+				9870D82C1B12B9650028604F /* Icon.png */,
+				9870D82D1B12B9650028604F /* image0.png */,
+				9870D82E1B12B9650028604F /* image1.png */,
+				9870D82F1B12B9650028604F /* image2.png */,
+				9870D8301B12B9650028604F /* image3.png */,
+				9870D8311B12B9650028604F /* image4.png */,
+				9870D8321B12B9650028604F /* image5.png */,
+				9870D8331B12B9650028604F /* image6.png */,
+				9870D8341B12B9650028604F /* image7.png */,
+				9870D8351B12B9650028604F /* image8.png */,
+				9870D8361B12B9650028604F /* image9.png */,
+				9870D8371B12B9650028604F /* image10.png */,
+				9870D8051B12B5570028604F /* AppDelegate.h */,
+				9870D8061B12B5570028604F /* AppDelegate.m */,
+				9870D8081B12B5570028604F /* ViewController.h */,
+				9870D8091B12B5570028604F /* ViewController.m */,
+				9870D80B1B12B5570028604F /* Main.storyboard */,
+				9870D80E1B12B5570028604F /* Images.xcassets */,
+				9870D8101B12B5570028604F /* LaunchScreen.xib */,
+				9870D8011B12B5570028604F /* Supporting Files */,
+			);
+			path = TagerGame;
+			sourceTree = "<group>";
+		};
+		9870D8011B12B5570028604F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9870D8021B12B5570028604F /* Info.plist */,
+				9870D8031B12B5570028604F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9870D81A1B12B5580028604F /* TagerGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				9870D81D1B12B5580028604F /* TagerGameTests.m */,
+				9870D81B1B12B5580028604F /* Supporting Files */,
+			);
+			path = TagerGameTests;
+			sourceTree = "<group>";
+		};
+		9870D81B1B12B5580028604F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9870D81C1B12B5580028604F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9870D7FD1B12B5570028604F /* TagerGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9870D8211B12B5580028604F /* Build configuration list for PBXNativeTarget "TagerGame" */;
+			buildPhases = (
+				9870D7FA1B12B5570028604F /* Sources */,
+				9870D7FB1B12B5570028604F /* Frameworks */,
+				9870D7FC1B12B5570028604F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TagerGame;
+			productName = TagerGame;
+			productReference = 9870D7FE1B12B5570028604F /* TagerGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9870D8161B12B5580028604F /* TagerGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9870D8241B12B5580028604F /* Build configuration list for PBXNativeTarget "TagerGameTests" */;
+			buildPhases = (
+				9870D8131B12B5580028604F /* Sources */,
+				9870D8141B12B5580028604F /* Frameworks */,
+				9870D8151B12B5580028604F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9870D8191B12B5580028604F /* PBXTargetDependency */,
+			);
+			name = TagerGameTests;
+			productName = TagerGameTests;
+			productReference = 9870D8171B12B5580028604F /* TagerGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9870D7F61B12B5570028604F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = stdio;
+				TargetAttributes = {
+					9870D7FD1B12B5570028604F = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					9870D8161B12B5580028604F = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 9870D7FD1B12B5570028604F;
+					};
+				};
+			};
+			buildConfigurationList = 9870D7F91B12B5570028604F /* Build configuration list for PBXProject "TagerGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9870D7F51B12B5570028604F;
+			productRefGroup = 9870D7FF1B12B5570028604F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9870D7FD1B12B5570028604F /* TagerGame */,
+				9870D8161B12B5580028604F /* TagerGameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9870D7FC1B12B5570028604F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9870D8391B12B9650028604F /* Icon.png in Resources */,
+				9870D8411B12B9650028604F /* image7.png in Resources */,
+				9870D83E1B12B9650028604F /* image4.png in Resources */,
+				9870D83D1B12B9650028604F /* image3.png in Resources */,
+				9870D83B1B12B9650028604F /* image1.png in Resources */,
+				9870D83A1B12B9650028604F /* image0.png in Resources */,
+				9870D8401B12B9650028604F /* image6.png in Resources */,
+				9870D83F1B12B9650028604F /* image5.png in Resources */,
+				9870D8431B12B9650028604F /* image9.png in Resources */,
+				9870D8441B12B9650028604F /* image10.png in Resources */,
+				9870D80D1B12B5570028604F /* Main.storyboard in Resources */,
+				9870D8121B12B5570028604F /* LaunchScreen.xib in Resources */,
+				9870D8421B12B9650028604F /* image8.png in Resources */,
+				9870D80F1B12B5570028604F /* Images.xcassets in Resources */,
+				9870D8381B12B9650028604F /* Default.png in Resources */,
+				9870D83C1B12B9650028604F /* image2.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9870D8151B12B5580028604F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9870D7FA1B12B5570028604F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9870D80A1B12B5570028604F /* ViewController.m in Sources */,
+				9870D8071B12B5570028604F /* AppDelegate.m in Sources */,
+				9870D8041B12B5570028604F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9870D8131B12B5580028604F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9870D81E1B12B5580028604F /* TagerGameTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9870D8191B12B5580028604F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9870D7FD1B12B5570028604F /* TagerGame */;
+			targetProxy = 9870D8181B12B5580028604F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9870D80B1B12B5570028604F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9870D80C1B12B5570028604F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9870D8101B12B5570028604F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9870D8111B12B5570028604F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9870D81F1B12B5580028604F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9870D8201B12B5580028604F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9870D8221B12B5580028604F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TagerGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9870D8231B12B5580028604F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TagerGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9870D8251B12B5580028604F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TagerGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TagerGame.app/TagerGame";
+			};
+			name = Debug;
+		};
+		9870D8261B12B5580028604F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TagerGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TagerGame.app/TagerGame";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9870D7F91B12B5570028604F /* Build configuration list for PBXProject "TagerGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9870D81F1B12B5580028604F /* Debug */,
+				9870D8201B12B5580028604F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9870D8211B12B5580028604F /* Build configuration list for PBXNativeTarget "TagerGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9870D8221B12B5580028604F /* Debug */,
+				9870D8231B12B5580028604F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9870D8241B12B5580028604F /* Build configuration list for PBXNativeTarget "TagerGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9870D8251B12B5580028604F /* Debug */,
+				9870D8261B12B5580028604F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9870D7F61B12B5570028604F /* Project object */;
+}

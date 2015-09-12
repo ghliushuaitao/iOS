@@ -1,0 +1,1015 @@
+
+/*
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *
+ * Copyleft (C) 2009-2015
+ * COEO - China Open Education Organization
+ * "+++New Life+++" Team for Computer Science
+ * Free as in freedom. The Truth Will Free You.
+ * 张开自由的翅膀，真理要释放你。
+ * To teach the inexperienced the ropes 
+ * and give our young people a grasp on reality.
+ * 教导没有经验的得以丰富，给予青年人开启真理的钥匙。
+ * The old life is gone; a new life burgeons!
+ * 告别飘逝的过去，拥抱怒放的新生！
+ *
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *
+ * This file is available to you under a choice of one of two licenses.
+ *
+ * GPL
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 as published
+ * by the Free Software Foundation.
+ *
+ * THE FILE IS DISTRIBUTED AS-IS, WITHOUT WARRANTY OF ANY KIND, AND THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE
+ * ARE EXPRESSLY DISCLAIMED.
+ *
+ * See the GNU General Public License * for more details.
+ *
+ * http://www.opensource.org/licenses/gpl-license.html
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * 
+ * BSD
+ *
+ *  Alternatively you can redistribute this file under the terms of the
+ *  BSD license as stated below:
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions
+ *  are met:
+ *  1. Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *  2. Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *  3. The names of its contributors may not be used to endorse or promote
+ *     products derived from this software without specific prior written
+ *     permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ *  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ *  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ *  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ *  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ *  TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ *  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ *  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *
+ * Description:
+ *     This file describe UILabel.
+ *
+ * Original Date:
+ *     Dec-08-2014
+ *
+ * Modified Date:
+ *     Feb-06-2015
+ *
+ * Authors:
+ *     Yuhui    <abrahambenyu@gmail.com>
+ *
+ * Current Version:
+ *     0.1.6
+ *
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Table of Contents
+=================
+
+    01. Overture
+    02. My First Experience
+    03. Create a New UIView
+    04. UILabel Characteristic
+    05. Exercises - System Label Font
+    06. Real Project - Chess Board
+    07. Traps and Pitfalls
+    08. Diligence
+    09. Homework
+
+
+01. Overture
+
+    1.01  Building Environment
+
+          01. Xcode 4.3.3 需要 Mac OS X 10.7.4 或更高版本；
+          02. Xcode 4.6 需要 Mac OS X 10.8 或更高版本；
+          03. Xcode 5.0 需要 Mac OS X 10.8.4 或更高版本；
+          04. Xcode 5.1 需要 Mac OS X 10.9 或更高版本；
+          05. Xcode 6.0 需要 Mac OS X 10.9.x 或更高版本；
+          06. Xcode 6.1 需要 Mac OS X 10.10 或更高版本；
+
+    1.02  Programming Language
+
+          01. 大部分 Cocoa Touch 的功能是用 Objective-C 实现的；
+          02. Objective-C 是一种面向对象的语言，它编译运行的速度令人难以置信；
+          03. 更值得一提的是采用了真正的动态运行时系统，从而增添了难能可贵的灵活性；
+          04. 由于 Objective-C 是 C 的超集，因此您可以轻松地将 C 甚至是 C++ 融入
+              Cocoa Touch 应用程序中；
+          05. 当应用程序运行时，Objective-C 运行时会根据执行逻辑（而不仅是编译期间定义的方式）
+              实例化对象；
+          06. 从 iOS8 开始的编程语言可以用 Swift 了，要求 Xcode 版本为 6.0 及以后。
+
+    1.03  Whole Day Introduction
+
+          01. 首先，编出一个计算机编程的经典 "Hello World"；
+          02. 然后，我们看代码来学习一下程序的运行流程；
+          03. 接着，我们创建一个自己的 UIView；
+          04. 接着，我们的重点，UILabel 的学习；
+          05. 接着，来一个课堂练习；
+          06. 最后，我们的一个实战，国际象棋的棋盘。
+
+    1.04  Conclusion
+
+          01. 本文档所使用的代码是在 Xcode-5.1 的版本下编译通过的；
+          02. 如果有版本不一至，需要对比调试和修改，或查看官方文档。
+
+02. My First Experience
+
+    2.01  New Project
+    
+          01. 打开 Xcode;
+          02. Create a new Xcode project；
+          03. iOS --> Application --> Empty Application --> Next；
+          04. Product Name: Day01_01_MyFirstExperience,
+              Organization Name: mobiletrain.org,
+              Company Identifier: 1000phone.com,
+              Class Prefix: ,
+              Devices: iPhone --> Next；
+          05. 选择存储的位置后，（建议初学者在桌面建立一个新的 "iOS" 文件夹）；
+          06. 最后，点击 "Create" 完成新的项目创建。
+    
+    2.02  Explanation didFinishLaunchingWithOptions
+    
+          #import "AppDelegate.h"
+
+          @implementation AppDelegate
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              // 程序加载完毕，经典的 Hello World 从这里开始！
+          (1) NSLog(@"In the beginning God created the heavens and the earth.");
+              /* UIWindow 是表示应用程序的窗口的类
+               * UIScreen 是表示屏幕的类
+               * 下面代码创建一个主屏幕大小相同的窗口做为应用（代理）的窗口
+               */
+              self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+          (2) NSLog(@"茜儿/欧，我们这段感情就从这儿开始吧，我一定会好好珍惜你的！");
+
+              // 设置窗口的背景色为白色，UIColor 是表示颜色的类
+              self.window.backgroundColor = [UIColor whiteColor];
+              // 让窗口显示出来
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+    2.03  Explanation applicationWillResignActive
+
+          - (void)applicationWillResignActive:(UIApplication *)application
+          {
+              // 程序即将进入后台，我胡汗三一定会回来的
+          (1) NSLog(@"茜儿/欧，我要出差了，你要照顾好自己，我很快就回来了！");
+
+              /*
+               * iPhone 手机按 Home 键，程序会入后台
+               * 用模拟器模拟 Home 键的方法：按键盘的 Shift+Command+h 键
+               *
+               * 请同学们在模拟器上练习一下！
+               */
+
+              // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+              // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+          }
+
+    2.04  Explanation applicationDidEnterBackground
+
+          - (void)applicationDidEnterBackground:(UIApplication *)application
+          {
+              // 程序已经进后台
+          (1) NSLog(@"茜儿/欧，我现在很好，每天开心敲代码，还有就是甜甜的想你！");
+
+              // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+              // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+          }
+
+    2.05  Explanation applicationWillEnterForeground
+
+          - (void)applicationWillEnterForeground:(UIApplication *)application
+          {
+              // 程序即将进入前台
+          (1) NSLog(@"茜儿/欧，我已经上飞机了，就要见到你了！等着我......");
+
+              /*
+               * iPhone 手机长按或双击 Home 键会显示后台程序列表，点击某后台程序后该程序回到前台
+               * 模拟器，长按 Shift+Command+h 进入后台
+               * 模拟器，按住 Shift+Command 双击 h 键显示后台程序列表
+               *
+               * 请同学们在模拟器上练习一下！
+               */
+
+              // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+          }
+
+    2.06  Explanation applicationDidBecomeActive
+
+          - (void)applicationDidBecomeActive:(UIApplication *)application
+          {
+              // 程序已经进入前台，我胡汉三又回来了，吃我的给我吐出来
+          (1) NSLog(@"茜儿/欧，...... 看你都瘦了，我以后一定要好好的看护你！");
+
+              // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+          }
+
+    2.07  Explanation applicationWillTerminate
+
+          // 该方法默认情况是不会被调用的
+          - (void)applicationWillTerminate:(UIApplication *)application
+          {
+          (1) NSLog(@"在我有生之年，我会爱你，珍惜你，忠诚于你，不管健康还是更健康，富裕还是更富裕，直到死亡将我们分开。");
+
+              // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+          }
+
+    2.08  Building, Troubleshooting, Thinking
+
+    2.09  Close Project
+
+          01. File —> Close Project —> Stop Tasks.
+          02. 不要点 "X" 来关闭，要知道 iOS 是多任务系统；
+          03. 不点菜单栏的关闭很可能进入后台，这样会浪费很多内存或引起其它问题。
+
+    2.10  Class Exercises
+
+    2.11  Conclusion
+
+03. Create a New UIView
+
+    3.01  New Project - Day01_02_UIView
+
+    3.02  Change Memory Management Method
+
+          Build Settings —> Search: gar —> Objective-C Automatic Reference Counting: No.
+
+    3.03  My First UI View
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              // 创建一个新的 UIView
+          (1) UIView *view = [[UIView alloc]init];
+
+              /*
+               * 设置 view 的坐标和大小
+               *
+               * CGRectMake 函数原型：CGRectMake(CGFloat x, CGFloat y,
+               *                    CGFloat width, CGFloat height)
+               * 1. 视图的 frame 属性为 CGRect 类型，表示视图的左上角的坐标和宽高
+               * 2. CGRectMake 是一个 C 函数，用于创建并返回一个 CGRect，
+               *    其参数分别为：左上角 X 坐标、左上角 Y 坐标，然后是 UIView 的宽、高
+               */
+          (2) view.frame = CGRectMake(50, 50, 100, 100);
+
+              // 设置视图的背景色，主要是为了测试，使我们更明白
+          (3) view.backgroundColor = [UIColor greenColor];
+
+              /*
+               * 把视图加入父视图（程序的主窗口），否则视图是不可见的
+               * addSubview 会调用 retain，对参数指定的视图增加引用计数
+               */
+          (4) [self.window addSubview:view];
+
+              // 我们不再使用这个视图了，release 掉
+          (5) [view release];
+    
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+    3.04  Building, Troubleshooting, Thinking
+
+    3.05  Class Exercises
+
+    3.06  Conclusion
+
+          01. [view release]; 这句话只是对指针的计数减一，以后再也不要用这个 view 指针了，
+              release 并不是释放内存空间；
+          02. 手动方式管理内存是为了练习，不然一直用自动方式那就不会手动管理了。
+
+04. UILabel Characteristic
+
+    4.00  New Project and Modify ARC
+
+          Day01_03_UILabel
+
+    4.01  Label1
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+          (1) [self demoLabel1];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          (2) - (void)demoLabel1
+          {
+              // 实例化 label1 对象
+          (3) UILabel *label1 = [[UILabel alloc]init];
+              // 设置 label1 的体型
+          (4) label1.frame = CGRectMake(10, 40, 200, 30);
+              // 设置 label1 的背景（默认为的色，可看不见啊！）
+          (5) label1.backgroundColor = [UIColor yellowColor];
+              // 设置要显示的文字，使用默认字体和颜色
+          (6) label1.text = @"标签一：只爱我一个";
+              // 把 label1 加入到当前视图当中
+          (7) [self.window addSubview:label1];
+              // 使 label1 的计数器减一
+          (8) [label1 release];
+          }
+
+          Building, Troubleshooting, Thinking
+
+    4.02  Label2
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoLabel1];
+          (1) [self demoLabel2];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoLabel1
+          // ... ...
+
+          (2) - (void)demoLabel2
+          {
+              // 创建 Label2 的同时指定坐标和大小
+          (3) UILabel *label2 = [[UILabel alloc]
+                  initWithFrame:CGRectMake(10, 80, 200, 30)];
+          (4) label2.text = @"标签二：一夫一妻";
+              /*
+               * 这里没有指定 Label 的背景色，其默认背景色是透明的，
+               * 也就是：[UIColor clearColor]
+               * 等价于：label2.backgroundColor = [UIColor clearColor];
+               */
+              // 特殊指定文字颜色
+          (5) label2.textColor = [UIColor redColor];
+          (6) [self.window addSubview:label2];
+          (7) [label2 release];
+          }
+
+          Building, Troubleshooting, Thinking
+
+    4.03  Label3
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoLabel1];
+              [self demoLabel2];
+          (1) [self demoLabel3];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoLabel1
+          // ... ...
+          - (void)demoLabel2
+          // ... ...
+
+          (2) - (void)demoLabel3
+          {
+          (3) UILabel *label3 = [[UILabel alloc]
+                  initWithFrame:CGRectMake(10, 120, 200, 30)];
+              // 文字居中对齐
+          (4) label3.textAlignment = NSTextAlignmentCenter;
+              // 文字靠右对齐
+          (5) //label3.textAlignment = NSTextAlignmentRight;
+          (6) label3.backgroundColor = [UIColor yellowColor];
+          (7) label3.text = @"标签三：一生一世";
+          (8) [self.window addSubview:label3];
+          (9) [label3 release];
+
+          Building, Troubleshooting, Thinking
+
+    4.04  Label4
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoLabel1];
+              [self demoLabel2];
+              [self demoLabel3];
+          (1) [self demoLabel4];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoLabel1
+          // ... ...
+          - (void)demoLabel2
+          // ... ...
+          - (void)demoLabel3
+          // ... ...
+
+          (2) - (void)demoLabel4
+          {
+          (3) UILabel *label4 = [[UILabel alloc]
+                  initWithFrame:CGRectMake(10, 160, 200, 30)];
+          (4) label4.text = @"标签四：孝敬父母";
+              // 指定阴影颜色为灰色
+          (5) label4.shadowColor = [UIColor grayColor];
+              /* 设置阴影的偏移，包括水平偏移和垂直偏移
+               * CGSizeMake函数原型：CGSizeMake(<#CGFloat width#>, <#CGFloat height#>)
+               * 1. showOffset 是一个 GCSize 类型的结构体，其有两个成员 width 和 height
+               * 2. 在设置阴影偏移的时候 width 表示水平方向的偏移（正数向右、负数向左）、
+               *    height 表示垂直方向的偏移（正数向下、负数向上）
+               * 3. CGSizeMake 用于创建一个 CGSize 类型的结构体并返回，参数分别为宽和高
+               */
+          (6) label4.shadowOffset = CGSizeMake(2, 4/*2*/);
+          (7) [self.window addSubview:label4];
+          (8) [label4 release];
+          }
+
+          Building, Troubleshooting, Thinking
+
+    4.05  Label5
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoLabel1];
+              [self demoLabel2];
+              [self demoLabel3];
+              [self demoLabel4];
+          (1) [self demoLabel5];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoLabel1
+          // ... ...
+          - (void)demoLabel2
+          // ... ...
+          - (void)demoLabel3
+          // ... ...
+          - (void)demoLabel4
+          // ... ...
+
+          (2) - (void)demoLabel5
+          {
+          (3) UILabel *label5 = [[UILabel alloc]
+                  initWithFrame:CGRectMake(10, 200, 200, 100)];
+          (4) label5.backgroundColor = [UIColor yellowColor];
+          (5) label5.text = @"when i was young i'd listen to the radio
+                              waiting for my favorite songs
+                              when they played i'd sing along,
+                              it make me smile.";
+              /*
+               * 设置最多显示 3 行文字，默认的时候是显示一行文字，显示不完的以...表示
+               * 如果要显示所有的可以把 numberOfLines 设成 0
+               */
+          (6) label5.numberOfLines = 3;
+          (7) label5.numberOfLines = 0;
+          (8) [self.window addSubview:label5];
+          (9) [label5 release];
+          }
+
+          Building, Troubleshooting, Thinking
+
+    4.06  Label6
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoLabel1];
+              [self demoLabel2];
+              [self demoLabel3];
+              [self demoLabel4];
+              [self demoLabel5];
+          (1) [self demoLabel6];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoLabel1
+          // ... ...
+          - (void)demoLabel2
+          // ... ...
+          - (void)demoLabel3
+          // ... ...
+          - (void)demoLabel4
+          // ... ...
+          - (void)demoLabel5
+          // ... ...
+
+          (2) - (void)demoLabel6
+          {
+          (3) UILabel *label6 = [[UILabel alloc]
+                  initWithFrame:CGRectMake(10, 310, 200, 30)];
+          (4) label6.numberOfLines = 1;
+          (5) label6.text = @"when i was young i'd listen to the radio
+                              waiting for my favorite songs
+                              when they played i'd sing along,
+                              it make me smile.";
+          (6) label6.backgroundColor = [UIColor yellowColor];
+              /*
+               * NSLineBreakByCharWrapping 表示：
+               * 可以在任意位置折行，但从 iOS7 开始无效
+               * 现在直接是显示不完的就不显示了
+               */
+          (7) label6.lineBreakMode = NSLineBreakByCharWrapping;
+              /*
+               * NSLineBreakByTruncatingHead 表示：
+               * 当显示不完时，把 "前边" 的截断只显示后边的
+               * 被截断的部分用 ... 表示
+               */
+          (10) //label6.lineBreakMode = NSLineBreakByTruncatingHead;
+              /*
+               * NSLineBreakByTruncatingMiddle 表示：
+               * 当显示不完时，把 "中间" 的截断只显示前面和后面的
+               * 被截断的部分用 ... 表示
+               */
+          (11) //label6.lineBreakMode = NSLineBreakByTruncatingMiddle;
+          (8) [self.window addSubview:label6];
+          (9) [label6 release];
+          }
+
+          Building, Troubleshooting, Thinking
+          运行，对比，查看 (5), (8), (9) 的区别！
+
+    4.07  Label7
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoLabel1];
+              [self demoLabel2];
+              [self demoLabel3];
+              [self demoLabel4];
+              [self demoLabel5];
+              [self demoLabel6];
+          (1) [self demoLabel7];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoLabel1
+          // ... ...
+          - (void)demoLabel2
+          // ... ...
+          - (void)demoLabel3
+          // ... ...
+          - (void)demoLabel4
+          // ... ...
+          - (void)demoLabel5
+          // ... ...
+          - (void)demoLabel6
+          // ... ...
+
+          (2) - (void)demoLabel7
+          {
+          (3) UILabel *label7 = [[UILabel alloc]
+                  initWithFrame:CGRectMake(10, 350, 200, 20)];
+              /*
+               * 用指定的红、绿、蓝、透明度调制出一种颜色
+               * 1. 红、绿、蓝都是一个 0～1 之间的一个浮点数，
+               *    数值越大表示该种颜色比较强，反之表示该种颜色弱
+               * 2. 透明度也是 0～1 之间的数，0 表示完全透明、1 表示完全不透明
+               */
+          (4) label7.backgroundColor = [UIColor
+                  colorWithRed:1 green:0 blue:1 alpha:1];
+          (5) [self.window addSubview:label7];
+          (6) [label7 release];
+          }
+
+          Building, Troubleshooting, Thinking
+
+    4.08  Label8
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoLabel1];
+              [self demoLabel2];
+              [self demoLabel3];
+              [self demoLabel4];
+              [self demoLabel5];
+              [self demoLabel6];
+              [self demoLabel7];
+          (1) [self demoLabel8];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoLabel1
+          // ... ...
+          - (void)demoLabel2
+          // ... ...
+          - (void)demoLabel3
+          // ... ...
+          - (void)demoLabel4
+          // ... ...
+          - (void)demoLabel5
+          // ... ...
+          - (void)demoLabel6
+          // ... ...
+          - (void)demoLabel7
+          // ... ...
+
+          (2) - (void)demoLabel8
+          {
+          (3) UILabel *label8 = [[UILabel alloc]
+                  initWithFrame:CGRectMake(10, 390, 200, 30)];
+          (4) label8.text = @"Label8";
+              /*
+               * UIFont：是表示字体的类
+               * systemFontOfSize：用于创建一个字号为 20 的默认字体
+               */
+          (5) label8.font = [UIFont systemFontOfSize:24];
+          (6) [self.window addSubview:label8];
+          (7) [label8 release];
+          }
+
+          Building, Troubleshooting, Thinking
+
+    4.09  Label9
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoLabel1];
+              [self demoLabel2];
+              [self demoLabel3];
+              [self demoLabel4];
+              [self demoLabel5];
+              [self demoLabel6];
+              [self demoLabel7];
+              [self demoLabel8];
+          (1) [self demoLabel9];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoLabel1
+          // ... ...
+          - (void)demoLabel2
+          // ... ...
+          - (void)demoLabel3
+          // ... ...
+          - (void)demoLabel4
+          // ... ...
+          - (void)demoLabel5
+          // ... ...
+          - (void)demoLabel6
+          // ... ...
+          - (void)demoLabel7
+          // ... ...
+          - (void)demoLabel8
+          // ... ...
+
+          (2) - (void)demoLabel9
+          {
+          (3) UILabel *label9 = [[UILabel alloc]
+                  initWithFrame:CGRectMake(10, 430, 200, 30)];
+          (4) label9.text = @"Label9";
+              // 创建 24 号默认粗体
+          (5) label9.font = [UIFont boldSystemFontOfSize:24];
+              // 创建 24 号默认斜体
+          (9) //label9.font = [UIFont italicSystemFontOfSize:24];
+          (6) label9.font = [UIFont fontWithName:@"Zapfino" size:24];
+          (7) [self.window addSubview:label9];
+          (9) [label9 release];
+          }
+
+          Building, Troubleshooting, Thinking
+          运行，对比，查看 (3), (7) 的区别！
+
+    4.10  Get System Font Family Names
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoLabel1];
+              [self demoLabel2];
+              [self demoLabel3];
+              [self demoLabel4];
+              [self demoLabel5];
+              [self demoLabel6];
+              [self demoLabel7];
+              [self demoLabel8];
+              [self demoLabel9];
+          (1) [self getFamilyNames];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoLabel1
+          // ... ...
+          - (void)demoLabel2
+          // ... ...
+          - (void)demoLabel3
+          // ... ...
+          - (void)demoLabel4
+          // ... ...
+          - (void)demoLabel5
+          // ... ...
+          - (void)demoLabel6
+          // ... ...
+          - (void)demoLabel7
+          // ... ...
+          - (void)demoLabel8
+          // ... ...
+          - (void)demoLabel9
+          // ... ...
+
+          (2) - (void)getFamilyNames
+          {
+              // 获得系统支持的所有字体名
+          (3) NSLog(@" +++ 我父是万有，财产极丰饶，执掌天下所有一切财宝 +++");
+          (4) NSArray *fontFamilyNames = [UIFont familyNames];
+          (5) NSLog(@"fontFamilyNames: %@", fontFamilyNames);
+          (6) NSLog(@" +++ 滑动滚轮往上看！ +++");
+          }
+
+    4.11  Class Exercises
+
+    4.12  Conclusion
+
+05. Exercises - System Label Font
+
+    5.01  Introduction
+
+          要求遍历 UIFont 家庭字体（也就是 familyNames），然后显示在屏幕上。
+
+    5.02  New Project - Day01_04_Exercises
+
+    5.03  Source Code
+
+          AppDelegate.m
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+          (1) [self getFamilyNames];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void) getFamilyNames
+          {
+          (2) int y = 0;
+          (3) NSArray *arr = [UIFont familyNames];
+          (4) for (NSString *fontName in arr) {
+          (5)      y += 30;
+          (6)     UILabel *label = [[UILabel alloc]
+                      initWithFrame:CGRectMake(10, y, 100, 30)];
+          (7)     label.text = fontName;
+          (8)     [self.window addSubview:label];
+          (9)     [label release];
+              }
+          }
+
+    5.04  Building, Troubleshooting, Thinking
+
+    5.05  Class Exercises
+
+    5.06  Conclusion
+
+06. Real Project - Chess Board
+
+    6.01  Introduction
+
+          做一个国际象棋，用黑白格子来摆放棋子。
+
+    6.02  New Project - Day01_05_ChessBoard
+
+    6.03  Source Code
+
+          6.3.01  Method Call in application
+
+                  - (BOOL)application:(UIApplication *)application
+                      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+                  {
+                      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+                      // Override point for customization after application launch.
+    
+                  (1) [self createChessBoard];
+
+                      self.window.backgroundColor = [UIColor whiteColor];
+                      [self.window makeKeyAndVisible];
+                      return YES;
+                  }
+
+          6.3.02  createChessBoard - Create Grid
+
+                  - (void)createChessBoard
+                  {
+                      // 创建棋盘
+                  (1) UIView *chessBoard = [[UIView alloc]
+                          initWithFrame:CGRectMake(0, 80, 320, 320)];
+                  (2) [self.window addSubview:chessBoard];
+    
+                      // 创建格子，row 表示行
+                  (3) for (int row = 0; row < 8; ++row) {
+                          // col 表示列
+                  (4)     for (int col = 0; col < 8; ++col) {
+                  (5)         UILabel *grid = [[UILabel alloc]init];
+                              /*
+                               * 可视组件的坐标是相对于其父视图左上角的，而不是相对于整个屏幕左上角
+                               * 把 B 视图加到 A 视图上，A 视图就叫做 B 视图的父视图
+                               * B 视图叫做 A 视图的子视图
+                               */
+                              // 计算每个格子的坐标和大小
+                  (6)         grid.frame = CGRectMake(40*col, 40*row, 40, 40);
+
+                              // 如果行列相加为偶数则为黑色
+                  (7)         if (0 == (row+col)%2) {
+                  (9)             grid.backgroundColor = [UIColor blackColor];
+                  (8)         } else {  // 否则为白色
+                  (10)            grid.backgroundColor = [UIColor whiteColor];
+                              }
+
+                              // 把格子加到棋盘上
+                  (11)        [chessBoard addSubview:grid];
+                  (12)        [grid release];
+                          }
+                      }
+                      [chessBoard release];
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          6.3.03  createChessBoard - Create Chessman
+
+                      // 创建格子，row 表示行
+                      for (int row = 0; row < 8; ++row) {
+                          // col 表示列
+                          for (int col = 0; col < 8; ++col) {
+                              //  创建格子 ... ...
+
+                              // 设置每个格子的内容
+                  (1)         grid.text = [self getTextForRow:row andCol:col];
+
+                              // 把格子加到棋盘上
+                              [chessBoard addSubview:grid];
+                              [grid release];
+                          }
+                      }
+                      [chessBoard release];
+                  }
+
+          6.3.04  - (NSString *)getTextForRow:(int)row andCol:(int)col
+
+                  /* 如果一个方法不需要在类的外部被调用，可以不在类的 interface 部分声明 */
+
+                  // 返回棋盘指定行列的字
+                  - (NSString *)getTextForRow:(int)row andCol:(int)col
+                  {
+                  (1) NSArray *texts = @[@"车", @"马", @"象", @"王", @"后", @"象", @"马", @"车"];
+                  (2) if (0 == row || 7 == row) {
+                  (5)     return texts[col];
+                  (3) } else if (1 == row || 6 == row) {
+                  (6)     return @"兵";
+                  (4) } else {
+                  (7)     return @"";
+                      }
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          6.3.05  createChessBoard - Set Chessman Color
+
+                      // 创建格子，row 表示行
+                      for (int row = 0; row < 8; ++row) {
+                          // col 表示列
+                          for (int col = 0; col < 8; ++col) {
+                              //  设置每个格子的内容 ... ...
+
+                  (1)         if (0 == row || 1 == row) {
+                                  // 第 0 行或第 1 行的字为红色
+                  (3)             grid.textColor = [UIColor redColor];
+                  (4)             grid.font = [UIFont boldSystemFontOfSize:18];
+                  (2)         } else {
+                                  // 否则为绿色，因为第 2～5 行没有字，所以不会影响
+                  (5)             grid.textColor = [UIColor greenColor];
+                  (6)             grid.font = [UIFont boldSystemFontOfSize:18];
+                              }
+                              // 文字居中
+                  (7)         grid.textAlignment = NSTextAlignmentCenter;
+
+                              // 把格子加到棋盘上
+                              [chessBoard addSubview:grid];
+                              [grid release];
+                          }
+                      }
+                      [chessBoard release];
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+    6.04  Building, Troubleshooting, Thinking
+
+    6.05  Class Exercises
+
+    6.06  Exercises
+
+          01. 把 "王" 和 "后" 的位置调换，并把字体设为最大；
+          02. 把棋盘的颜色调成你最喜欢的颜色；
+          03. 加上一个游戏菜单，并写个象棋游戏的说明。
+
+    6.06  Conclusion
+
+07. Homework
+
+    7.01  Multiplication 9 * 9
+
+08. Traps and Pitfalls
+
+09. Diligence

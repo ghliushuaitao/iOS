@@ -1,0 +1,497 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCC013F81AA9883500526549 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC013F71AA9883500526549 /* main.m */; };
+		BCC013FB1AA9883500526549 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC013FA1AA9883500526549 /* AppDelegate.m */; };
+		BCC013FD1AA9883500526549 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC013FC1AA9883500526549 /* Images.xcassets */; };
+		BCC014001AA9883500526549 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC013FE1AA9883500526549 /* LaunchScreen.xib */; };
+		BCC0140C1AA9883500526549 /* _______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC0140B1AA9883500526549 /* _______Tests.m */; };
+		BCC014281AA9897B00526549 /* tab_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC014161AA9897B00526549 /* tab_0.png */; };
+		BCC014291AA9897B00526549 /* tab_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC014171AA9897B00526549 /* tab_1.png */; };
+		BCC0142A1AA9897B00526549 /* tab_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC014181AA9897B00526549 /* tab_2.png */; };
+		BCC0142B1AA9897B00526549 /* tab_3.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC014191AA9897B00526549 /* tab_3.png */; };
+		BCC0142C1AA9897B00526549 /* tab_c0.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC0141A1AA9897B00526549 /* tab_c0.png */; };
+		BCC0142D1AA9897B00526549 /* tab_c1.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC0141B1AA9897B00526549 /* tab_c1.png */; };
+		BCC0142E1AA9897B00526549 /* tab_c2.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC0141C1AA9897B00526549 /* tab_c2.png */; };
+		BCC0142F1AA9897B00526549 /* tab_c3.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC0141D1AA9897B00526549 /* tab_c3.png */; };
+		BCC014301AA9897B00526549 /* 010.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC0141F1AA9897B00526549 /* 010.png */; };
+		BCC014311AA9897B00526549 /* 011.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC014201AA9897B00526549 /* 011.png */; };
+		BCC014321AA9897B00526549 /* 012.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC014211AA9897B00526549 /* 012.png */; };
+		BCC014331AA9897B00526549 /* 013.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC014221AA9897B00526549 /* 013.png */; };
+		BCC014341AA9897B00526549 /* 014.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC014231AA9897B00526549 /* 014.png */; };
+		BCC014351AA9897B00526549 /* 015.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC014241AA9897B00526549 /* 015.png */; };
+		BCC014361AA9897B00526549 /* 016.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC014251AA9897B00526549 /* 016.png */; };
+		BCC014371AA9897B00526549 /* 017.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC014261AA9897B00526549 /* 017.png */; };
+		BCC014381AA9897B00526549 /* 018.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC014271AA9897B00526549 /* 018.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCC014061AA9883500526549 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCC013EA1AA9883500526549 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCC013F11AA9883500526549;
+			remoteInfo = "按钮的触发事件";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BCC013F21AA9883500526549 /* 按钮的触发事件.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "按钮的触发事件.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCC013F61AA9883500526549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCC013F71AA9883500526549 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BCC013F91AA9883500526549 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BCC013FA1AA9883500526549 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BCC013FC1AA9883500526549 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BCC013FF1AA9883500526549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BCC014051AA9883500526549 /* 按钮的触发事件Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "按钮的触发事件Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCC0140A1AA9883500526549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCC0140B1AA9883500526549 /* _______Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_______Tests.m"; sourceTree = "<group>"; };
+		BCC014161AA9897B00526549 /* tab_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_0.png; sourceTree = "<group>"; };
+		BCC014171AA9897B00526549 /* tab_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_1.png; sourceTree = "<group>"; };
+		BCC014181AA9897B00526549 /* tab_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_2.png; sourceTree = "<group>"; };
+		BCC014191AA9897B00526549 /* tab_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_3.png; sourceTree = "<group>"; };
+		BCC0141A1AA9897B00526549 /* tab_c0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_c0.png; sourceTree = "<group>"; };
+		BCC0141B1AA9897B00526549 /* tab_c1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_c1.png; sourceTree = "<group>"; };
+		BCC0141C1AA9897B00526549 /* tab_c2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_c2.png; sourceTree = "<group>"; };
+		BCC0141D1AA9897B00526549 /* tab_c3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_c3.png; sourceTree = "<group>"; };
+		BCC0141F1AA9897B00526549 /* 010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 010.png; sourceTree = "<group>"; };
+		BCC014201AA9897B00526549 /* 011.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 011.png; sourceTree = "<group>"; };
+		BCC014211AA9897B00526549 /* 012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 012.png; sourceTree = "<group>"; };
+		BCC014221AA9897B00526549 /* 013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 013.png; sourceTree = "<group>"; };
+		BCC014231AA9897B00526549 /* 014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 014.png; sourceTree = "<group>"; };
+		BCC014241AA9897B00526549 /* 015.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 015.png; sourceTree = "<group>"; };
+		BCC014251AA9897B00526549 /* 016.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 016.png; sourceTree = "<group>"; };
+		BCC014261AA9897B00526549 /* 017.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 017.png; sourceTree = "<group>"; };
+		BCC014271AA9897B00526549 /* 018.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 018.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCC013EF1AA9883500526549 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC014021AA9883500526549 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BCC013E91AA9883500526549 = {
+			isa = PBXGroup;
+			children = (
+				BCC014151AA9897B00526549 /* 图片 */,
+				BCC013F41AA9883500526549 /* 按钮的触发事件 */,
+				BCC014081AA9883500526549 /* 按钮的触发事件Tests */,
+				BCC013F31AA9883500526549 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BCC013F31AA9883500526549 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCC013F21AA9883500526549 /* 按钮的触发事件.app */,
+				BCC014051AA9883500526549 /* 按钮的触发事件Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCC013F41AA9883500526549 /* 按钮的触发事件 */ = {
+			isa = PBXGroup;
+			children = (
+				BCC013F91AA9883500526549 /* AppDelegate.h */,
+				BCC013FA1AA9883500526549 /* AppDelegate.m */,
+				BCC013FC1AA9883500526549 /* Images.xcassets */,
+				BCC013FE1AA9883500526549 /* LaunchScreen.xib */,
+				BCC013F51AA9883500526549 /* Supporting Files */,
+			);
+			path = "按钮的触发事件";
+			sourceTree = "<group>";
+		};
+		BCC013F51AA9883500526549 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BCC013F61AA9883500526549 /* Info.plist */,
+				BCC013F71AA9883500526549 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCC014081AA9883500526549 /* 按钮的触发事件Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BCC0140B1AA9883500526549 /* _______Tests.m */,
+				BCC014091AA9883500526549 /* Supporting Files */,
+			);
+			path = "按钮的触发事件Tests";
+			sourceTree = "<group>";
+		};
+		BCC014091AA9883500526549 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BCC0140A1AA9883500526549 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCC014151AA9897B00526549 /* 图片 */ = {
+			isa = PBXGroup;
+			children = (
+				BCC014161AA9897B00526549 /* tab_0.png */,
+				BCC014171AA9897B00526549 /* tab_1.png */,
+				BCC014181AA9897B00526549 /* tab_2.png */,
+				BCC014191AA9897B00526549 /* tab_3.png */,
+				BCC0141A1AA9897B00526549 /* tab_c0.png */,
+				BCC0141B1AA9897B00526549 /* tab_c1.png */,
+				BCC0141C1AA9897B00526549 /* tab_c2.png */,
+				BCC0141D1AA9897B00526549 /* tab_c3.png */,
+				BCC0141E1AA9897B00526549 /* 表情包 */,
+			);
+			path = "图片";
+			sourceTree = "<group>";
+		};
+		BCC0141E1AA9897B00526549 /* 表情包 */ = {
+			isa = PBXGroup;
+			children = (
+				BCC0141F1AA9897B00526549 /* 010.png */,
+				BCC014201AA9897B00526549 /* 011.png */,
+				BCC014211AA9897B00526549 /* 012.png */,
+				BCC014221AA9897B00526549 /* 013.png */,
+				BCC014231AA9897B00526549 /* 014.png */,
+				BCC014241AA9897B00526549 /* 015.png */,
+				BCC014251AA9897B00526549 /* 016.png */,
+				BCC014261AA9897B00526549 /* 017.png */,
+				BCC014271AA9897B00526549 /* 018.png */,
+			);
+			path = "表情包";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCC013F11AA9883500526549 /* 按钮的触发事件 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCC0140F1AA9883500526549 /* Build configuration list for PBXNativeTarget "按钮的触发事件" */;
+			buildPhases = (
+				BCC013EE1AA9883500526549 /* Sources */,
+				BCC013EF1AA9883500526549 /* Frameworks */,
+				BCC013F01AA9883500526549 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "按钮的触发事件";
+			productName = "按钮的触发事件";
+			productReference = BCC013F21AA9883500526549 /* 按钮的触发事件.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BCC014041AA9883500526549 /* 按钮的触发事件Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCC014121AA9883500526549 /* Build configuration list for PBXNativeTarget "按钮的触发事件Tests" */;
+			buildPhases = (
+				BCC014011AA9883500526549 /* Sources */,
+				BCC014021AA9883500526549 /* Frameworks */,
+				BCC014031AA9883500526549 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCC014071AA9883500526549 /* PBXTargetDependency */,
+			);
+			name = "按钮的触发事件Tests";
+			productName = "按钮的触发事件Tests";
+			productReference = BCC014051AA9883500526549 /* 按钮的触发事件Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCC013EA1AA9883500526549 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = qianfeng;
+				TargetAttributes = {
+					BCC013F11AA9883500526549 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					BCC014041AA9883500526549 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = BCC013F11AA9883500526549;
+					};
+				};
+			};
+			buildConfigurationList = BCC013ED1AA9883500526549 /* Build configuration list for PBXProject "按钮的触发事件" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BCC013E91AA9883500526549;
+			productRefGroup = BCC013F31AA9883500526549 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCC013F11AA9883500526549 /* 按钮的触发事件 */,
+				BCC014041AA9883500526549 /* 按钮的触发事件Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCC013F01AA9883500526549 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCC014351AA9897B00526549 /* 015.png in Resources */,
+				BCC014311AA9897B00526549 /* 011.png in Resources */,
+				BCC014001AA9883500526549 /* LaunchScreen.xib in Resources */,
+				BCC0142E1AA9897B00526549 /* tab_c2.png in Resources */,
+				BCC0142A1AA9897B00526549 /* tab_2.png in Resources */,
+				BCC013FD1AA9883500526549 /* Images.xcassets in Resources */,
+				BCC014371AA9897B00526549 /* 017.png in Resources */,
+				BCC014281AA9897B00526549 /* tab_0.png in Resources */,
+				BCC014301AA9897B00526549 /* 010.png in Resources */,
+				BCC0142F1AA9897B00526549 /* tab_c3.png in Resources */,
+				BCC014291AA9897B00526549 /* tab_1.png in Resources */,
+				BCC014341AA9897B00526549 /* 014.png in Resources */,
+				BCC0142B1AA9897B00526549 /* tab_3.png in Resources */,
+				BCC014331AA9897B00526549 /* 013.png in Resources */,
+				BCC014361AA9897B00526549 /* 016.png in Resources */,
+				BCC014381AA9897B00526549 /* 018.png in Resources */,
+				BCC0142C1AA9897B00526549 /* tab_c0.png in Resources */,
+				BCC0142D1AA9897B00526549 /* tab_c1.png in Resources */,
+				BCC014321AA9897B00526549 /* 012.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC014031AA9883500526549 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCC013EE1AA9883500526549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCC013FB1AA9883500526549 /* AppDelegate.m in Sources */,
+				BCC013F81AA9883500526549 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC014011AA9883500526549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCC0140C1AA9883500526549 /* _______Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCC014071AA9883500526549 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCC013F11AA9883500526549 /* 按钮的触发事件 */;
+			targetProxy = BCC014061AA9883500526549 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BCC013FE1AA9883500526549 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCC013FF1AA9883500526549 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BCC0140D1AA9883500526549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BCC0140E1AA9883500526549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BCC014101AA9883500526549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				INFOPLIST_FILE = "按钮的触发事件/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BCC014111AA9883500526549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				INFOPLIST_FILE = "按钮的触发事件/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BCC014131AA9883500526549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "按钮的触发事件Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/按钮的触发事件.app/按钮的触发事件";
+			};
+			name = Debug;
+		};
+		BCC014141AA9883500526549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "按钮的触发事件Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/按钮的触发事件.app/按钮的触发事件";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCC013ED1AA9883500526549 /* Build configuration list for PBXProject "按钮的触发事件" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCC0140D1AA9883500526549 /* Debug */,
+				BCC0140E1AA9883500526549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCC0140F1AA9883500526549 /* Build configuration list for PBXNativeTarget "按钮的触发事件" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCC014101AA9883500526549 /* Debug */,
+				BCC014111AA9883500526549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BCC014121AA9883500526549 /* Build configuration list for PBXNativeTarget "按钮的触发事件Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCC014131AA9883500526549 /* Debug */,
+				BCC014141AA9883500526549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BCC013EA1AA9883500526549 /* Project object */;
+}

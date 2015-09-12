@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D5FBF4C1B7DBF8900476EFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5FBF4B1B7DBF8900476EFA /* Foundation.framework */; };
+		6D5FBF4E1B7DBF8900476EFA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5FBF4D1B7DBF8900476EFA /* CoreGraphics.framework */; };
+		6D5FBF501B7DBF8900476EFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5FBF4F1B7DBF8900476EFA /* UIKit.framework */; };
+		6D5FBF561B7DBF8900476EFA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D5FBF541B7DBF8900476EFA /* InfoPlist.strings */; };
+		6D5FBF581B7DBF8900476EFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FBF571B7DBF8900476EFA /* main.m */; };
+		6D5FBF5C1B7DBF8900476EFA /* WHJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FBF5B1B7DBF8900476EFA /* WHJAppDelegate.m */; };
+		6D5FBF5F1B7DBF8900476EFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D5FBF5D1B7DBF8900476EFA /* Main.storyboard */; };
+		6D5FBF621B7DBF8900476EFA /* WHJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FBF611B7DBF8900476EFA /* WHJViewController.m */; };
+		6D5FBF641B7DBF8900476EFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D5FBF631B7DBF8900476EFA /* Images.xcassets */; };
+		6D5FBF6B1B7DBF8900476EFA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5FBF6A1B7DBF8900476EFA /* XCTest.framework */; };
+		6D5FBF6C1B7DBF8900476EFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5FBF4B1B7DBF8900476EFA /* Foundation.framework */; };
+		6D5FBF6D1B7DBF8900476EFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5FBF4F1B7DBF8900476EFA /* UIKit.framework */; };
+		6D5FBF751B7DBF8900476EFA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D5FBF731B7DBF8900476EFA /* InfoPlist.strings */; };
+		6D5FBF771B7DBF8900476EFA /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FBF761B7DBF8900476EFA /* ____Tests.m */; };
+		B41481E01B80C9260019DBEB /* run.png in Resources */ = {isa = PBXBuildFile; fileRef = B41481DF1B80C9260019DBEB /* run.png */; };
+		B41481E21B80C9650019DBEB /* stay.png in Resources */ = {isa = PBXBuildFile; fileRef = B41481E11B80C9650019DBEB /* stay.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6D5FBF6E1B7DBF8900476EFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D5FBF401B7DBF8900476EFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D5FBF471B7DBF8900476EFA;
+			remoteInfo = "造桥小人";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6D5FBF481B7DBF8900476EFA /* 造桥小人.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "造桥小人.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D5FBF4B1B7DBF8900476EFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6D5FBF4D1B7DBF8900476EFA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6D5FBF4F1B7DBF8900476EFA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6D5FBF531B7DBF8900476EFA /* 造桥小人-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "造桥小人-Info.plist"; sourceTree = "<group>"; };
+		6D5FBF551B7DBF8900476EFA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6D5FBF571B7DBF8900476EFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6D5FBF591B7DBF8900476EFA /* 造桥小人-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "造桥小人-Prefix.pch"; sourceTree = "<group>"; };
+		6D5FBF5A1B7DBF8900476EFA /* WHJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHJAppDelegate.h; sourceTree = "<group>"; };
+		6D5FBF5B1B7DBF8900476EFA /* WHJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHJAppDelegate.m; sourceTree = "<group>"; };
+		6D5FBF5E1B7DBF8900476EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6D5FBF601B7DBF8900476EFA /* WHJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHJViewController.h; sourceTree = "<group>"; };
+		6D5FBF611B7DBF8900476EFA /* WHJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHJViewController.m; sourceTree = "<group>"; };
+		6D5FBF631B7DBF8900476EFA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6D5FBF691B7DBF8900476EFA /* 造桥小人Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "造桥小人Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D5FBF6A1B7DBF8900476EFA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6D5FBF721B7DBF8900476EFA /* 造桥小人Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "造桥小人Tests-Info.plist"; sourceTree = "<group>"; };
+		6D5FBF741B7DBF8900476EFA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6D5FBF761B7DBF8900476EFA /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
+		B41481DF1B80C9260019DBEB /* run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run.png; sourceTree = "<group>"; };
+		B41481E11B80C9650019DBEB /* stay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stay.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D5FBF451B7DBF8900476EFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5FBF4E1B7DBF8900476EFA /* CoreGraphics.framework in Frameworks */,
+				6D5FBF501B7DBF8900476EFA /* UIKit.framework in Frameworks */,
+				6D5FBF4C1B7DBF8900476EFA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D5FBF661B7DBF8900476EFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5FBF6B1B7DBF8900476EFA /* XCTest.framework in Frameworks */,
+				6D5FBF6D1B7DBF8900476EFA /* UIKit.framework in Frameworks */,
+				6D5FBF6C1B7DBF8900476EFA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D5FBF3F1B7DBF8900476EFA = {
+			isa = PBXGroup;
+			children = (
+				6D5FBF511B7DBF8900476EFA /* 造桥小人 */,
+				6D5FBF701B7DBF8900476EFA /* 造桥小人Tests */,
+				6D5FBF4A1B7DBF8900476EFA /* Frameworks */,
+				6D5FBF491B7DBF8900476EFA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6D5FBF491B7DBF8900476EFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D5FBF481B7DBF8900476EFA /* 造桥小人.app */,
+				6D5FBF691B7DBF8900476EFA /* 造桥小人Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D5FBF4A1B7DBF8900476EFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D5FBF4B1B7DBF8900476EFA /* Foundation.framework */,
+				6D5FBF4D1B7DBF8900476EFA /* CoreGraphics.framework */,
+				6D5FBF4F1B7DBF8900476EFA /* UIKit.framework */,
+				6D5FBF6A1B7DBF8900476EFA /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D5FBF511B7DBF8900476EFA /* 造桥小人 */ = {
+			isa = PBXGroup;
+			children = (
+				B41481DF1B80C9260019DBEB /* run.png */,
+				B41481E11B80C9650019DBEB /* stay.png */,
+				6D5FBF5A1B7DBF8900476EFA /* WHJAppDelegate.h */,
+				6D5FBF5B1B7DBF8900476EFA /* WHJAppDelegate.m */,
+				6D5FBF5D1B7DBF8900476EFA /* Main.storyboard */,
+				6D5FBF601B7DBF8900476EFA /* WHJViewController.h */,
+				6D5FBF611B7DBF8900476EFA /* WHJViewController.m */,
+				6D5FBF631B7DBF8900476EFA /* Images.xcassets */,
+				6D5FBF521B7DBF8900476EFA /* Supporting Files */,
+			);
+			path = "造桥小人";
+			sourceTree = "<group>";
+		};
+		6D5FBF521B7DBF8900476EFA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D5FBF531B7DBF8900476EFA /* 造桥小人-Info.plist */,
+				6D5FBF541B7DBF8900476EFA /* InfoPlist.strings */,
+				6D5FBF571B7DBF8900476EFA /* main.m */,
+				6D5FBF591B7DBF8900476EFA /* 造桥小人-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D5FBF701B7DBF8900476EFA /* 造桥小人Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6D5FBF761B7DBF8900476EFA /* ____Tests.m */,
+				6D5FBF711B7DBF8900476EFA /* Supporting Files */,
+			);
+			path = "造桥小人Tests";
+			sourceTree = "<group>";
+		};
+		6D5FBF711B7DBF8900476EFA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D5FBF721B7DBF8900476EFA /* 造桥小人Tests-Info.plist */,
+				6D5FBF731B7DBF8900476EFA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6D5FBF471B7DBF8900476EFA /* 造桥小人 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D5FBF7A1B7DBF8900476EFA /* Build configuration list for PBXNativeTarget "造桥小人" */;
+			buildPhases = (
+				6D5FBF441B7DBF8900476EFA /* Sources */,
+				6D5FBF451B7DBF8900476EFA /* Frameworks */,
+				6D5FBF461B7DBF8900476EFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "造桥小人";
+			productName = "造桥小人";
+			productReference = 6D5FBF481B7DBF8900476EFA /* 造桥小人.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6D5FBF681B7DBF8900476EFA /* 造桥小人Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D5FBF7D1B7DBF8900476EFA /* Build configuration list for PBXNativeTarget "造桥小人Tests" */;
+			buildPhases = (
+				6D5FBF651B7DBF8900476EFA /* Sources */,
+				6D5FBF661B7DBF8900476EFA /* Frameworks */,
+				6D5FBF671B7DBF8900476EFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D5FBF6F1B7DBF8900476EFA /* PBXTargetDependency */,
+			);
+			name = "造桥小人Tests";
+			productName = "造桥小人Tests";
+			productReference = 6D5FBF691B7DBF8900476EFA /* 造桥小人Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D5FBF401B7DBF8900476EFA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WHJ;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = qianfeng;
+				TargetAttributes = {
+					6D5FBF681B7DBF8900476EFA = {
+						TestTargetID = 6D5FBF471B7DBF8900476EFA;
+					};
+				};
+			};
+			buildConfigurationList = 6D5FBF431B7DBF8900476EFA /* Build configuration list for PBXProject "造桥小人" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6D5FBF3F1B7DBF8900476EFA;
+			productRefGroup = 6D5FBF491B7DBF8900476EFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D5FBF471B7DBF8900476EFA /* 造桥小人 */,
+				6D5FBF681B7DBF8900476EFA /* 造桥小人Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D5FBF461B7DBF8900476EFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5FBF641B7DBF8900476EFA /* Images.xcassets in Resources */,
+				B41481E21B80C9650019DBEB /* stay.png in Resources */,
+				6D5FBF561B7DBF8900476EFA /* InfoPlist.strings in Resources */,
+				6D5FBF5F1B7DBF8900476EFA /* Main.storyboard in Resources */,
+				B41481E01B80C9260019DBEB /* run.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D5FBF671B7DBF8900476EFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5FBF751B7DBF8900476EFA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D5FBF441B7DBF8900476EFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5FBF621B7DBF8900476EFA /* WHJViewController.m in Sources */,
+				6D5FBF5C1B7DBF8900476EFA /* WHJAppDelegate.m in Sources */,
+				6D5FBF581B7DBF8900476EFA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D5FBF651B7DBF8900476EFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5FBF771B7DBF8900476EFA /* ____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D5FBF6F1B7DBF8900476EFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D5FBF471B7DBF8900476EFA /* 造桥小人 */;
+			targetProxy = 6D5FBF6E1B7DBF8900476EFA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6D5FBF541B7DBF8900476EFA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D5FBF551B7DBF8900476EFA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6D5FBF5D1B7DBF8900476EFA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D5FBF5E1B7DBF8900476EFA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6D5FBF731B7DBF8900476EFA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D5FBF741B7DBF8900476EFA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6D5FBF781B7DBF8900476EFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6D5FBF791B7DBF8900476EFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6D5FBF7B1B7DBF8900476EFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "造桥小人/造桥小人-Prefix.pch";
+				INFOPLIST_FILE = "造桥小人/造桥小人-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6D5FBF7C1B7DBF8900476EFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "造桥小人/造桥小人-Prefix.pch";
+				INFOPLIST_FILE = "造桥小人/造桥小人-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6D5FBF7E1B7DBF8900476EFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/造桥小人.app/造桥小人";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "造桥小人/造桥小人-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "造桥小人Tests/造桥小人Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		6D5FBF7F1B7DBF8900476EFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/造桥小人.app/造桥小人";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "造桥小人/造桥小人-Prefix.pch";
+				INFOPLIST_FILE = "造桥小人Tests/造桥小人Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D5FBF431B7DBF8900476EFA /* Build configuration list for PBXProject "造桥小人" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D5FBF781B7DBF8900476EFA /* Debug */,
+				6D5FBF791B7DBF8900476EFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D5FBF7A1B7DBF8900476EFA /* Build configuration list for PBXNativeTarget "造桥小人" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D5FBF7B1B7DBF8900476EFA /* Debug */,
+				6D5FBF7C1B7DBF8900476EFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D5FBF7D1B7DBF8900476EFA /* Build configuration list for PBXNativeTarget "造桥小人Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D5FBF7E1B7DBF8900476EFA /* Debug */,
+				6D5FBF7F1B7DBF8900476EFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D5FBF401B7DBF8900476EFA /* Project object */;
+}

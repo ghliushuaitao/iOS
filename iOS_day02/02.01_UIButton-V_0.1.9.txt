@@ -1,0 +1,1112 @@
+
+/*
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *
+ * Copyleft (C) 2009-2015
+ * COEO - China Open Education Organization
+ * "+++New Life+++" Team for Computer Science
+ * Free as in freedom. The Truth Will Free You.
+ * 张开自由的翅膀，真理要释放你。
+ * To teach the inexperienced the ropes 
+ * and give our young people a grasp on reality.
+ * 教导没有经验的得以丰富，给予青年人开启真理的钥匙。
+ * The old life is gone; a new life burgeons!
+ * 告别飘逝的过去，拥抱怒放的新生！
+ *
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *
+ * This file is available to you under a choice of one of two licenses.
+ *
+ * GPL
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 as published
+ * by the Free Software Foundation.
+ *
+ * THE FILE IS DISTRIBUTED AS-IS, WITHOUT WARRANTY OF ANY KIND, AND THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE
+ * ARE EXPRESSLY DISCLAIMED.
+ *
+ * See the GNU General Public License * for more details.
+ *
+ * http://www.opensource.org/licenses/gpl-license.html
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * 
+ * BSD
+ *
+ *  Alternatively you can redistribute this file under the terms of the
+ *  BSD license as stated below:
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions
+ *  are met:
+ *  1. Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *  2. Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *  3. The names of its contributors may not be used to endorse or promote
+ *     products derived from this software without specific prior written
+ *     permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ *  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ *  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ *  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ *  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ *  TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ *  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ *  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *
+ * Description:
+ *     This file describe UIButton.
+ *
+ * Original Date:
+ *     Dec-15-2014
+ *
+ * Modified Date:
+ *     Feb-06-2015
+ *
+ * Authors:
+ *     Yuhui    <abrahambenyu@gmail.com>
+ *
+ * Current Version:
+ *     0.1.9
+ *
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Table of Contents
+=================
+
+    01. UIButton - Lots of
+    02. RadioButton - Made by Button
+    03. Exercises - 9 * 9 Button
+    04. UIViewController - Random Number
+    05. Chess Game - Move Chessman
+    06. Homework
+    07. Traps and Pitfalls
+    08. Diligence
+
+
+01. UIButton - Lots of
+
+    1.01  Introduction
+
+          01. 按钮是再经常使用的东西了，在原古的时候就有按钮了；
+          02. 同学们来说说现实世界中有哪些是按钮啊？
+          03. 灯的开关，电梯的按钮，电视机，门铃，枪的扳机... ...
+
+    1.02  New Project
+
+          1.2.01  New Project
+
+                  Day02_01_UIButton
+
+          1.2.02  ARC Setting
+
+    1.03  Source Code - Button1
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+          (1) [self demoButton1];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+              /* 一个最基本的按钮 */
+          (2) - (void)demoButton1
+          {
+          (3) UIButton *button1 = [UIButton buttonWithType:UIButtonTypeSystem];
+          (4) button1.frame = CGRectMake(10, 30, 80, 30);
+          (6) button1.backgroundColor = [UIColor greenColor];
+          (5) [self.window addSubview:button1];
+
+              // 写到第 (5) 步就运行，看是否出来按钮了？
+                 提问为什么没有按钮？
+                 你能看见空气吗？
+                 为什么晚上看不见黑人啊！
+          }
+
+          Building, Troubleshooting, Thinking
+
+    1.04  Button2 － UIControlStateNormal/Hightlighted
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoButton1];
+          (1) [self demoButton2];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoButton1
+          // ...
+
+              /* 按钮的按下和抬起处理 */
+          (2) - (void)demoButton2
+          {
+              // UIButtonTypeRoundedRect:
+              // 官方文档上说：Deprecated, use UIButtonTypeSystem instead
+              // 原意是创建圆角 Button, 从 iOS7 开始取消了圆角效果
+          (3) UIButton *button2 = [UIButton buttonWithType:
+                  UIButtonTypeRoundedRect];
+          (4) button2.frame = CGRectMake(10, 70, 80, 30);
+          (5) button2.backgroundColor = [UIColor yellowColor];
+          (6) [self.window addSubview:button2];
+
+              // 运行_1：到这里可以先运行一下看看！
+
+              // 设置正常情况下 Button 上显示的文字，也就是弹起状态下的文字
+          (7) [button2 setTitle:@"正常"
+                  forState:UIControlStateNormal];
+              // 设置高亮状态下 Button 上显示的文字，也就是按下状态下的文字
+          (8) [button2 setTitle:@"按下"
+                  forState:UIControlStateHighlighted];
+
+              // 运行_2：到这里可以再运行一下看看！
+
+              // 设置正常状态下的文字颜色
+          (9) [button2 setTitleColor:[UIColor redColor]
+                  forState:UIControlStateNormal];
+              // 设置高亮状态下的文字颜色
+          (10) [button2 setTitleColor:[UIColor blueColor]
+                  forState:UIControlStateHighlighted];
+
+              // 运行_3：到这里可以最后运行一下看看！
+          }
+
+          Building, Troubleshooting, Thinking
+
+          iOS6 和 iOS6 之前的 UI 风格是拟物化，从 iOS7 开始 UI 风格是扁平化。
+
+    1.05  Button3 - UIControlEventTouchUpInside
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoButton1];
+              [self demoButton2];
+          (1) [self demoButton3];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoButton1
+          // ...
+          - (void)demoButton2
+          // ...
+
+              /* 按钮的点击处理事件 */
+          (2) - (void)demoButton3
+          {
+              // 一些系统的按钮类型，了解一下即可
+          (3) UIButton *button3 = [UIButton
+                  buttonWithType:UIButtonTypeInfoDark];
+          (4) button3.frame = CGRectMake(10, 110, 80, 30);
+          (5) button3.backgroundColor = [UIColor yellowColor];
+
+              // 设置 Button 的事件处理程序
+              // 当 Button 触发某个事件时会调用参数一指定的对象的方法（由二个参数指定）
+              // 参数三：指定具体的事件的类型：UIControlEventTouchUpInside
+              //        表示在 Button 的矩形范围内按下（鼠标或手指）并抬起
+
+          (6) [button3 addTarget:self action:@selector(onButtonClick:)
+                      forControlEvents:UIControlEventTouchUpInside];
+
+              // tag 是从 UIView 底层继承来的属性，是一个整数
+              // 本身没有任何函义，我们可以用它来区别不同的控件
+              // button3.tag = 3;
+
+          (7) [self.window addSubview:button3];
+          }
+
+          Building, Troubleshooting, Thinking
+
+    1.06  Implement Event Handler when Button Click
+
+          // 定义 Button 被点击时的事件处理方法
+          - (void)onButtonClick:(UIButton *)sender
+          {
+              NSLog(@" 全民捉小三 (button3) ，造福社会！");
+              sender.backgroundColor = [UIColor greenColor];
+          }
+
+    1.07  Button3 － UIButtonTypeContactAdd
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoButton1];
+              [self demoButton2];
+              [self demoButton3];
+          (1) [self demoButton4];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoButton1
+          // ...
+          - (void)demoButton2
+          // ...
+          - (void)demoButton3
+          // ...
+
+              /* 多个按钮的点击处理事件 */
+          (2) - (void)demoButton4
+          {
+          (3) UIButton *button4 = [UIButton
+                  buttonWithType:UIButtonTypeContactAdd];
+          (4) button4.frame = CGRectMake(10, 150, 80, 30);
+          (5) button4.backgroundColor = [UIColor yellowColor];
+          (6) [button4 addTarget:self action:@selector(onButtonClick:)
+                  forControlEvents:UIControlEventTouchUpInside];
+
+              // 注意：onButtonClick 后面有一个 :
+              // 表示：有一个参数
+
+          (7) button4.tag = 4;
+          (8) [self.window addSubview:button3];
+          }
+
+          Building, Troubleshooting, Thinking
+
+          运行中我们发现，两个按钮点击时都执行一个这一个方法；
+          如何执行两个方法呢？
+          如何不定时两个方法，两个按钮全能处理呢？
+          我们来区分两个不同的按钮，tag 成员能解决这个问题！
+
+    1.08  Implement Two Button Click
+
+          - (void)onButtonClick:(UIButton *)sender
+          {
+              if (3 == sender.tag) {
+                  sender.backgroundColor = [UIColor greenColor];
+                  NSLog(@" 全民捉小三 (button3) ，造福社会！");
+              } else if (4 == sender.tag) {
+                  NSLog(@" 敢找小四！身败名裂，家破人亡！");
+              }
+          }
+
+    1.09  Button5 － UIButtonTypeDetailDisclosure
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoButton1];
+              [self demoButton2];
+              [self demoButton3];
+              [self demoButton4];
+          (1) [self demoButton5];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoButton1
+          // ...
+          - (void)demoButton2
+          // ...
+          - (void)demoButton3
+          // ...
+          - (void)demoButton4
+          // ...
+
+          /* 对比 InfoDark 和 InfoLight 的区别 */
+          (2) - (void)demoButton5
+          {
+          (3) UIButton *button5 = [UIButton
+                  buttonWithType:UIButtonTypeDetailDisclosure];
+          (7) //UIButton *button5 = [UIButton
+                  buttonWithType:UIButtonTypeInfoDark];
+          (4) button5.frame = CGRectMake(10, 190, 80, 30);
+          (5) button5.backgroundColor = [UIColor yellowColor];
+          (6) [self.window addSubview:button5];
+          }
+
+          试下 (5) 和 (1) 的区别？再和前面的 button3 比较看区别？
+          iOS7 之后，UIButtonTypeInfoDark，UIButtonTypeInfoLight
+          和 UIButtonTypeDetailDisclosure 之间看不出来什么区别了！
+
+          Building, Troubleshooting, Thinking
+
+    1.10  Button6 - Custom
+
+          - (BOOL)application:(UIApplication *)application
+              didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+          {
+              self.window = [[UIWindow alloc]
+                  initWithFrame:[[UIScreen mainScreen] bounds]];
+              // Override point for customization after application launch.
+
+              [self demoButton1];
+              [self demoButton2];
+              [self demoButton3];
+              [self demoButton4];
+              [self demoButton5];
+          (1) [self demoButton6];
+
+              self.window.backgroundColor = [UIColor whiteColor];
+              [self.window makeKeyAndVisible];
+              return YES;
+          }
+
+          - (void)demoButton1
+          // ...
+          - (void)demoButton2
+          // ...
+          - (void)demoButton3
+          // ...
+          - (void)demoButton4
+          // ...
+          - (void)demoButton5
+          // ...
+
+              /* 创建自定义的 Button，可以贴图片 */
+          (2) - (void)demoButton6
+          {
+          (3) UIButton *button6 = [UIButton
+                  buttonWithType:UIButtonTypeCustom];
+          (4) button6.frame = CGRectMake(10, 230, 300/*100*/, 30);
+
+              // UIImage：是表示（内存中的）图片的类
+              // imageNamed：是用于加载图片并创建 UIImage 类的对象的（类）方法
+              // UIImage：不适合加载大的图片，会长驻在内存中
+              // 适合加载较小的图片，从几 K 到几十 K
+              // 如果扩展名是 png 的，那么 png 可以省略不写
+          (6) UIImage *imageBackground = [UIImage imageNamed:@"header.png"];
+
+              // 设置 Button 的背景图片，图片会被拉伸以填满整个 Button
+          (5) [button6 setBackgroundImage:imageBackground
+                  forState:UIControlStateNormal];
+
+              // 设置 Button 的前景图片
+              // 前景图片居中显示，不拉伸，会挡住背景图片
+          (9) UIImage *image = [UIImage imageNamed:@"people"];
+          (8) [button6 setImage:image forState:UIControlStateNormal];
+
+              // 运行_2，修改 frame 的 width 和 height 然后再看看效果！
+
+          (7) [self.window addSubview:button6];
+
+              // 运行_1，修改 frame 的 width 和 height 然后再看看效果！
+          }
+
+          Building, Troubleshooting, Thinking
+
+    1.10  Classs Exercises
+
+          1.10.01  按钮事件，能否去除掉，是否需要去除掉？
+
+    1.11  Conclusion
+
+02. RadioButton - Made by Button
+
+    2.01  Introduction
+
+          01. 在 Android 里：单选框是 Radio，复选框是 CheckBox，下拉菜单是 Spinner；
+          02. 单选框，复选框，在现实世界中有哪些呢？
+          03. iOS 里没有单选框和复选框，那怎么做呢，在 iOS 里是用按钮来模拟实现的。
+
+    2.02  New Project
+
+          2.2.01  New Project
+
+                  Day02_02_RadioButton
+
+          2.2.02  ARC Setting
+
+    2.03  Source Code
+
+          2.3.01  AppDelegate.m - createRadioButton
+
+                  - (BOOL)application:(UIApplication *)application
+                      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+                  {
+                      self.window = [[UIWindow alloc]
+                          initWithFrame:[[UIScreen mainScreen] bounds]];
+                      // Override point for customization after application launch.
+    
+                  (1) [self createRadioButton];
+    
+                      self.window.backgroundColor = [UIColor whiteColor];
+                      [self.window makeKeyAndVisible];
+                      return YES;
+                  }
+
+                  (2) - (void)createRadioButton
+                  {
+                  (3) UIButton *button = [UIButton
+                          buttonWithType:UIButtonTypeSystem];
+                  (4) button.frame = CGRectMake(20, 40, 40, 40);
+
+                  (6) UIImage *imageNormal = [UIImage imageNamed:@"star_0"];
+                      // 设置未选中状态下的图片
+                  (5) [butto setImage:imageNormal forState:UIControlStateNormal];
+
+                  (8) UIImage *imageSelected = [UIImage imageNamed:@"star_1"];
+                      // 设置选中状态下的图片
+                  (7) [button setImage:imageSelected forState:UIControlStateSelected];
+
+                      // selected 为 YES 表示选中状态，NO 表示未选中状态
+                  (9) button.selected = YES;
+
+                  (10) [button addTarget:self action:@selector(onButtonClick:)
+                          forControlEvents:UIControlEventTouchUpInside];
+                  (11) [self.window addSubview:button];
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+                  把 YES，改为 NO 再运行一下，看看？
+
+          2.3.02  - (void)onButtonClick:(UIButton *)sender
+
+                  - (void)onButtonClick:(UIButton *)sender
+                  {
+                  (1) if (sender.selected == YES) {
+                  (2)     sender.selected = NO;
+                  (3) } else {
+                  (4)     sender.selected = YES;
+                      }
+                  }
+
+          2.3.03  onButtonClick - K.I.S.S.
+
+                  - (void)onButtonClick:(UIButton *)sender
+                  {
+                  /*
+                      if (sender.selected == YES) {
+                          sender.selected = NO;
+                      } else {
+                          sender.selected = YES;
+                      }
+                   */
+
+                  (1) sender.selected = !sender.selected;
+                  }
+
+    2.04  Building, Troubleshooting, Thinking
+
+    2.05  Class Exercises
+
+    2.06  Conclusion
+
+03. Exercises - 9 * 9 Button
+
+    3.01  Introduction
+
+    3.02  New Project
+
+          3.2.01  New Project
+
+                  Day02_03_Button9X9
+
+          3.2.02  ARC Setting
+
+    3.03  Source Code
+
+          3.3.01  application
+
+                  - (BOOL)application:(UIApplication *)application
+                      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+                  {
+                      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+                      // Override point for customization after application launch.
+
+                  (1) [self multiplication];
+    
+                      self.window.backgroundColor = [UIColor whiteColor];
+                      [self.window makeKeyAndVisible];
+                      return YES;
+                  }
+
+          3.3.02  - (void)multiplication
+
+                  - (void)multiplication
+                  {
+                      // 创建 9 * 9 的列表的 Button
+                  (14) int Y = 30;
+                  (1) for (int row = 1; row < 10; ++row) {
+                  (13)    int X = 8;
+                  (2)     for (int col = 0; col < row; ++col) {
+                  (3)         UIButton *button = [UIButton
+                                  buttonWithType:UIButtonTypeSystem];
+                  (4)         button.frame = CGRectMake(X, Y, 30, 20);
+                  (5)         button.backgroundColor = [UIColor yellowColor];
+                  (6)         NSString *strTitle = [NSString
+                                  stringWithFormat:@"%d*%d", col+1, row];
+                  (7)         [button setTitle:strTitle forState:UIControlStateNormal];
+                  (8)        button.tag = row * (col+1);
+                  (9)        [button addTarget:self action:@selector(count:)
+                                  forControlEvents:UIControlEventTouchUpInside];
+                  (10)       [self.window addSubview:button];
+                  (12)        X += 35;
+
+                          }
+                  (15)    Y += 25;
+                      }
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          3.3.03  - (void)count:(UIButton *)sender
+
+                  - (void)count:(UIButton *)sender
+                  {
+                  (1) NSString *str = [NSString stringWithFormat:@"%ld",
+                          (long)sender.tag];
+                  (2) UILabel *label = [[UILabel alloc]
+                          initWithFrame:CGRectMake(100, 350, 100, 30)];
+                  (3) label.backgroundColor = [UIColor redColor];
+                  (4) label.text = str;
+                  (5) [self.window addSubview:label];
+                  (6) [label release];
+                  }
+
+                  想一想有什么问题吗？
+                  是不是每一次显示结果，都得新建一个 label 呢？
+                  这样不是太浪费了吗？
+
+                  Building, Troubleshooting, Thinking
+
+          3.3.04  Create One Label for Everytime Show Result
+
+                  3.3.4.01  AppDelegate.h - Declare Global Variable
+
+                            #import <UIKit/UIKit.h>
+
+                            @interface AppDelegate : UIResponder <UIApplicationDelegate>
+                            {
+                            (1) UILabel *_label;
+                            }
+                            @property (strong, nonatomic) UIWindow *window;
+
+                            @end
+
+                  3.3.4.02  AppDelegate.m - Create Label for Show Result
+
+                            - (void)multiplication
+                            {
+                                // 创建显示结果的 _label
+                            (1) _label = [[UILabel alloc]init];
+                            (2) [self.window addSubview:_label];
+                            (3) _label.frame = CGRectMake(100, 300, 40, 20);
+                            (4) _label.textAlignment = NSTextAlignmentCenter;
+                            (5) _label.backgroundColor = [UIColor redColor];
+                            (6) [_label release];
+
+                                // 创建 9 * 9 的列表的 Button
+                                int Y = 30;
+                                ... ...
+                            }
+
+                  3.3.4.03  Create Label for Show Result in count
+
+                            - (void)count:(UIButton *)sender
+                            {
+                            (1) /*
+                                NSString *str = [NSString stringWithFormat:@"%ld", (long)sender.tag];
+                                UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(100, 350, 100, 30)];
+                                label.backgroundColor = [UIColor yellowColor];
+                                label.text = str;
+                                [self.window addSubview:label];
+                                [label release];
+                                */
+                            (2) _label.text = str;
+                            }
+
+                            Building, Troubleshooting, Thinking
+
+                  3.3.4.04  - (void)dealloc
+
+                            (1) //[_label release];
+
+                            (2) - (void)dealloc
+                            {
+                            (3) [_label release];
+                            (4) [super dealloc];
+                            }
+
+    3.04  Building, Troubleshooting, Thinking
+
+    3.05  Class Exercises
+
+    3.06  Conclusion
+
+04. UIViewController - Random Number
+
+    4.01  Introduction
+
+          01. 我们以前建的程序都是把源代码写在了 AppDelegate.m 里了，这样做不好；
+          02. 我的室友，是个山西人，他把内衣，内裤，袜子，手套 ... ...
+          03. 那么我们现在要在自己的 ViewController 里面定义我们自己工作；
+          04. 这样做有很多好处，各按其则的去工作，清楚而且可扩展性和可复用性都好！
+          05. 以后就不用总在 AppDelegate.m 中写代码了，以后你也会为总定义自己的 ViewController 而发烦。
+
+    4.02  New Project
+
+          4.2.01  New Project
+
+                  Day02_04_UIViewController
+
+          4.2.02  ARC Setting
+
+          4.2.03  New File for My ViewController
+
+                  01. 先鼠标左键点击，AppDelegate.m；
+                  02. File --> New --> File --> iOS --> Cocoa Touch；
+                  03. --> Objective-C Class --> Next；
+                  04. --> Subclass of: UIViewController；
+                  05. --> Class: MyViewController
+                  06. --> Next --> 位置 --> Create.
+
+    4.03  Source Code
+
+          4.3.01  AppDelegate.m
+
+                  (1) #import "MyViewController.h"
+
+                  - (BOOL)application:(UIApplication *)application
+                      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+                  {
+                      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+                      // Override point for customization after application launch.
+
+                      // 创建一个视图控制器
+                  (2) MyViewController * myVC = [[MyViewController alloc]init];
+                  (5) //myVC.view.backgroundColor = [UIColor greenColor];
+
+                      // 把刚创建的视图控制器 myVC 作为根视图控制器
+                      // 此时视图控制器管理的视图会显示在屏幕上
+                      //（视图控制器内部会自动创建一个全屏的视图）
+
+                  (3) self.window.rootViewController = myVC;
+                  (4) [myVC release];
+
+                      self.window.backgroundColor = [UIColor whiteColor];
+                      [self.window makeKeyAndVisible];
+                      return YES;
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          4.3.02  MyViewController.m - initWithNibName
+
+                  /* 这是一个视图初始化方法，当创建视图控制器时会被自动调用 */
+                  - (id)initWithNibName:(NSString *)nibNameOrNil
+                      bundle:(NSBundle *)nibBundleOrNil
+                  {
+                  (1) NSLog(@" initWithNibName: 内裤，袜子终于不用放一起了！");
+                      self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+                      if (self) {
+                          // Custom initialization
+                      }
+                      return self;
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          4.3.03  MyViewController.m - viewDidLoad - Start Button
+
+                  /* 当视图控制器所管理的视图被加载完之后会自动调用这个方法 */
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                  (1) [self startButton];
+                  }
+
+                  - (void)startButton
+                  {
+                      // 创建开始按钮
+                  (2) UIButton *btnStart = [UIButton
+                          buttonWithType:UIButtonTypeSystem];
+                  (3) btnStart.frame = CGRectMake(50, 350, 80, 30);
+                  (4) btnStart.backgroundColor = [UIColor yellowColor];
+                  (5) [btnStart setTitle:@"开始" forState:UIControlStateNormal];
+
+                      // 设置 btnStart 的字体
+                      // btnStart.font 废弃了不建议使用
+                  (6) btnStart.titleLabel.font = [UIFont systemFontOfSize:30];
+                  (7) [btnStart addTarget:self action:@selector(onBtnStartClick:)
+                          forControlEvents:UIControlEventTouchUpInside];
+                  (8) btnStart.tag = 101;
+                      // self.view 表示当前视图控制器所管理的视图
+                  (9) [self.view addSubview:btnStart];
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          4.3.04  MyViewController.m - viewDidLoad - Stop Button
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                      [self startButton];
+                  (1) [self stopButton];
+                  }
+
+                  - (void)startButton
+                  {
+                      // 创建停止按钮
+                  (2) UIButton *btnStop = [UIButton
+                          buttonWithType:UIButtonTypeSystem];
+                  (3) btnStop.frame = CGRectMake(200, 350, 80, 30);
+                  (4) btnStop.backgroundColor = [UIColor yellowColor];
+                  (5) [btnStop setTitle:@"停止" forState:UIControlStateNormal];
+                  (6) btnStop.titleLabel.font = [UIFont systemFontOfSize:30];
+                  (7) [btnStop addTarget:self action:@selector(onBtnStartClick:)
+                          forControlEvents:UIControlEventTouchUpInside];
+                  (8) btnStop.tag = 102;
+                  (9) [self.view addSubview:btnStop];
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          4.3.05  MyViewController.m - viewDidLoad - Label
+
+                  @implementation ViewController
+                  {
+                      // 这里也可以定义成员变量，这里定义的是私有的，不能被类的外部访问
+                  (1) UILabel *_label;
+                  }
+
+                  // 也可以在这里声明一些类内部使用的方法
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                      [self startButton];
+                      [self stopButton];
+                  (2) [self displayNumber];
+                  }
+
+                  - (void)displayNumber
+                  {
+                      // 创建 Label
+                  (3) _label = [[UILabel alloc]initWithFrame:CGRectMake(20, 40, 280, 150)];
+                  (4) _label.backgroundColor = [UIColor grayColor];
+                  (5) _label.font = [UIFont systemFontOfSize:150];
+                  (6) _label.text = @"00";
+                  (7) _label.textAlignment = NSTextAlignmentCenter;
+                  (8) [self.view addSubview:_label];
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          4.3.06  MyViewController.m - Timer Declaration
+
+                  @implementation ViewController
+                  {
+                      // 这里也可以定义成员变量，这里定义的是私有的，不能被类的外部访问
+                      UILabel *_label;
+                      // NSTimer 是表示定时器的类
+                  (1) NSTimer *_timer;
+                  }
+
+          4.3.07  MyViewController.m - viewDidLoad - Timer
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+
+                      [self startButton];
+                      [self stopButton];
+                      [self displayNumber];
+                  (1) [self createTimer];
+                  }
+
+                  - (void)createTimer
+                  {
+                      // 创建一个定时器
+                      // 参数一：定时器的时间间隔，以秒为单位
+                      // 参数二：某对象指针
+                      // 参数三：某方法选择器，当到达指定的时间间隔时，
+                                会调用参数二指定的对象的参数三指定的方法
+                      // 参数四：不需要
+                      // 参数五：YES 表示重复触发，NO 表示只触发一次
+                      // 定时器创建完以后就开始计时了
+                  (2) _timer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                        target:self
+                                        selector:@selector(onTimer)
+                                        userInfo:nil
+                                        repeats:YES];
+                      // 停止定时器
+                  (3) [_timer setFireDate:[NSDate distantFuture]];
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          4.3.08  MyViewController.m - onTimer
+
+                  (1) - (void)onTimer
+                      {
+                  (2)     int value = arc4random() % 55 + 1;
+                  (3)     _label.text = [NSString stringWithFormat:@"%d", value];
+                      }
+
+                  Building, Troubleshooting, Thinking
+
+                  把 createTimer 里的 (3) 注释，再运行一下试试！
+
+          4.3.09  MyViewController.m - onBtnStartClick
+
+                  (1) - (void)onBtnStartClick:(UIButton *)sender
+                      {
+                  (2)     if (101 == sender.tag) {
+                  (4)         [_timer setFireDate:[NSDate distantPast]];
+                  (3)     } else {
+                  (5)         [_timer setFireDate:[NSDate distantFuture]];
+                          }
+                      }
+
+                  Building, Troubleshooting, Thinking
+
+          4.3.10  MyViewController.m - dealloc
+
+                  (1) - (void)dealloc
+                  {
+                      // 停止并销毁定时器
+                  (2) [_timer invalidate];
+                  (3) [_label release];
+                  (4) [super dealloc];
+                     }
+
+    4.04  Building, Troubleshooting, Thinking
+
+    4.05  Class Exercises
+
+          把 "开始" 和 "结束" 两个按钮改成一个按钮来处理？
+          （提示：可以使用 Button 的 selected 属性来处理是否点击了）
+
+    4.06  Conclusion
+
+05. Chess Board - Move Chessman
+
+    5.01  Introduction
+
+    5.02  New Project
+
+          5.2.01  New Project
+
+                  Day02_05_ChessGame
+
+          5.2.02  ARC Setting
+
+          5.2.03  New File for My ViewController
+
+                  01. 先鼠标左键点击，AppDelegate.m；
+                  02. File --> New --> File --> iOS --> Cocoa Touch；
+                  03. --> Objective-C Class --> Next；
+                  04. --> Subclass of: UIViewController；
+                  05. --> Class: ChessViewController
+                  06. --> Next --> 位置 --> Create.
+
+    5.03  Source Code
+
+          5.3.01  AppDelegate.m
+
+                  (1) #import "ChessViewController.h"
+
+                  - (BOOL)application:(UIApplication *)application
+                      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+                  {
+                      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+                      // Override point for customization after application launch.
+
+                  (2) ChessViewController *chess = [[ChessViewController alloc]init];
+                  (3) self.window.rootViewController = chess;
+                  (4) [chess release];
+
+                      self.window.backgroundColor = [UIColor whiteColor];
+                      [self.window makeKeyAndVisible];
+                      return YES;
+                  }
+
+          5.3.02  - (void)viewDidLoad
+
+                  - (void)viewDidLoad
+                  {
+                      [super viewDidLoad];
+                      // Do any additional setup after loading the view.
+    
+                      // 这个经常会忘记，为了防止，先写上
+                  (1) [self createChess];
+                  }
+
+          5.3.03  - (void)createChess - Chess Board
+
+                  - (void)createChess
+                  {
+                  (1) UIView *chessBoard = [[UIView alloc]
+                                            initWithFrame:CGRectMake(0, 80, 320, 320)];
+
+                  (2) [self.view addSubview:chessBoard];
+
+                      // 创建棋盘中的格子
+                  (3) for (int row = 0; row < 8; ++row) {
+                  (4)     for (int col = 0; col < 8; ++col) {
+                  (5)         UILabel *grid = [[UILabel alloc]
+                                  initWithFrame:CGRectMake(col*40, row*40, 40, 40)];
+                  (6)         if (0 == (row+col)%2) {
+                  (7)             grid.backgroundColor = [UIColor blackColor];
+                  (8)         } else {
+                  (9)             grid.backgroundColor = [UIColor whiteColor];
+                              }
+                  (10)        [chessBoard addSubview:grid];
+                  (11)        [grid release];
+                          }
+                      }
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          5.3.04  - (void)createChess - Chess
+
+                  - (void)createChess
+                  {
+                      // 创建棋盘中的格子
+                      for (int row = 0; row < 8; ++row) {
+                          for (int col = 0; col < 8; ++col) {
+                              // ... ...
+                          }
+                      }
+
+                      // 创建棋子
+                  (1) for (int row = 0; row < 8; ++row) {
+                  (2)     for (int col = 0; col < 8; ++col) {
+                  (3)         UIButton *chessMan = [UIButton
+                                  buttonWithType:UIButtonTypeSystem];
+                  (4)         chessMan.frame = CGRectMake(col*40, row*40, 40, 40);
+                  (5)         NSString *title = [self getTextForRow:row andCol:col];
+                  (6)         [chessMan setTitle:title forState:UIControlStateNormal];
+                              // 按钮上的文字居中
+                  (7)         chessMan.titleLabel.textAlignment = NSTextAlignmentCenter;
+                              // 按钮背景的颜色透明
+                  (8)         chessMan.backgroundColor = [UIColor clearColor];
+                  (9)         [chessBoard addSubview:chessMan];
+
+                  (10)        [chessMan addTarget:self action:@selector(onChessManClick:)
+                                  forControlEvents:UIControlEventTouchUpInside];
+
+                              // 设置棋子（也就是按钮的颜色）的颜色
+                  (11)        if (0 == row || 1 == row) {
+                  (13)            [chessMan setTitleColor:[UIColor redColor]
+                                                 forState:UIControlStateNormal];
+                  (12)        } else {
+                  (14)            [chessMan setTitleColor:[UIColor greenColor]
+                                                 forState:UIControlStateNormal];
+                              }
+                  (15)        [chessBoard addSubview:chessMan];
+                          }
+                      }
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          5.3.05  getTextForRow
+
+                  // 返回棋盘上指定行和列的字（棋子上的字）
+                  - (NSString *)getTextForRow:(int)row andCol:(int)col
+                  {
+                  (1) NSArray *texts = @[@"车", @"马", @"象", @"王", @"后", @"象", @"马", @"车"];
+                  (2) if (0 == row || 7 == row) {
+                  (5)     return texts[col];
+                  (3) } else if (1 == row || 6 == row) {
+                  (6)     return @"兵";
+                  (4) } else {
+                  (6)     return @"";
+                      }
+                  }
+
+                  Building, Troubleshooting, Thinking
+
+          5.3.06  onChessManClick
+
+                  @implementation ChessViewController
+                  {
+                      // 被选中的棋子 (button)
+                  (1) UIButton *_selectedChessMan;
+                  }
+
+                  - (void)onChessManClick:(UIButton *)sender
+                  {
+                  (2) if (sender.titleLabel.text.length > 0) {
+                  (4)     if (_selectedChessMan) {
+                  (5)         _selectedChessMan.titleLabel.font = [UIFont systemFontOfSize:15];
+                  (6)         [_selectedChessMan release];
+                          }
+                          // 当前点击的是一个棋子
+                  (7)     _selectedChessMan = sender;  // [sender retain] work for Xcode-5.1
+                          // 放大字体，以示棋子被选中
+                  (8)     _selectedChessMan.titleLabel.font = [UIFont systemFontOfSize:24];
+                  (3) } else {
+                          // 当前点击的是空白的格子
+                  (9)     if (_selectedChessMan) {
+                              // 如果当前有选中的棋子，就把选中棋子和点击的空格交换位置
+                  (10)        CGRect frame = sender.frame;
+                  (11)        sender.frame = _selectedChessMan.frame;
+                  (12)        _selectedChessMan.frame = frame;
+                          }
+                      }
+                  }
+
+    5.04  Building, Troubleshooting, Thinking
+
+    5.05  Class Exercises
+
+    5.06  Conclusion
+
+06. Homework
+
+    6.01  用 UIButton 来实现计算器。
+
+07. Traps and Pitfalls
+
+08. Diligence

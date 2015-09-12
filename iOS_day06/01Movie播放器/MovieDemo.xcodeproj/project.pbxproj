@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04DACAD715C8CCBF0033784E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DACAD615C8CCBF0033784E /* UIKit.framework */; };
+		04DACAD915C8CCBF0033784E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DACAD815C8CCBF0033784E /* Foundation.framework */; };
+		04DACADB15C8CCBF0033784E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DACADA15C8CCBF0033784E /* CoreGraphics.framework */; };
+		04DACAE115C8CCBF0033784E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04DACADF15C8CCBF0033784E /* InfoPlist.strings */; };
+		04DACAE315C8CCBF0033784E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DACAE215C8CCBF0033784E /* main.m */; };
+		04DACAE715C8CCBF0033784E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DACAE615C8CCBF0033784E /* AppDelegate.m */; };
+		04DACAEA15C8CCBF0033784E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DACAE915C8CCBF0033784E /* ViewController.m */; };
+		04DACAED15C8CCBF0033784E /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DACAEB15C8CCBF0033784E /* ViewController.xib */; };
+		04DACAF415C8CCEA0033784E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DACAF315C8CCEA0033784E /* MediaPlayer.framework */; };
+		04DACAF615C8CD010033784E /* test1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04DACAF515C8CD010033784E /* test1.mp4 */; };
+		04DACAF815C8CD150033784E /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DACAF715C8CD150033784E /* playButton.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04DACAD215C8CCBF0033784E /* MovieDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DACAD615C8CCBF0033784E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		04DACAD815C8CCBF0033784E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		04DACADA15C8CCBF0033784E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		04DACADE15C8CCBF0033784E /* MovieDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MovieDemo-Info.plist"; sourceTree = "<group>"; };
+		04DACAE015C8CCBF0033784E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04DACAE215C8CCBF0033784E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04DACAE415C8CCBF0033784E /* MovieDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MovieDemo-Prefix.pch"; sourceTree = "<group>"; };
+		04DACAE515C8CCBF0033784E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04DACAE615C8CCBF0033784E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04DACAE815C8CCBF0033784E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		04DACAE915C8CCBF0033784E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04DACAEC15C8CCBF0033784E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		04DACAF315C8CCEA0033784E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		04DACAF515C8CD010033784E /* test1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test1.mp4; sourceTree = "<group>"; };
+		04DACAF715C8CD150033784E /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04DACACF15C8CCBF0033784E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DACAF415C8CCEA0033784E /* MediaPlayer.framework in Frameworks */,
+				04DACAD715C8CCBF0033784E /* UIKit.framework in Frameworks */,
+				04DACAD915C8CCBF0033784E /* Foundation.framework in Frameworks */,
+				04DACADB15C8CCBF0033784E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04DACAC715C8CCBF0033784E = {
+			isa = PBXGroup;
+			children = (
+				04DACADC15C8CCBF0033784E /* MovieDemo */,
+				04DACAD515C8CCBF0033784E /* Frameworks */,
+				04DACAD315C8CCBF0033784E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04DACAD315C8CCBF0033784E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04DACAD215C8CCBF0033784E /* MovieDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04DACAD515C8CCBF0033784E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04DACAF315C8CCEA0033784E /* MediaPlayer.framework */,
+				04DACAD615C8CCBF0033784E /* UIKit.framework */,
+				04DACAD815C8CCBF0033784E /* Foundation.framework */,
+				04DACADA15C8CCBF0033784E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04DACADC15C8CCBF0033784E /* MovieDemo */ = {
+			isa = PBXGroup;
+			children = (
+				04DACAE515C8CCBF0033784E /* AppDelegate.h */,
+				04DACAE615C8CCBF0033784E /* AppDelegate.m */,
+				04DACAE815C8CCBF0033784E /* ViewController.h */,
+				04DACAE915C8CCBF0033784E /* ViewController.m */,
+				04DACAEB15C8CCBF0033784E /* ViewController.xib */,
+				04DACADD15C8CCBF0033784E /* Supporting Files */,
+			);
+			path = MovieDemo;
+			sourceTree = "<group>";
+		};
+		04DACADD15C8CCBF0033784E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04DACAF515C8CD010033784E /* test1.mp4 */,
+				04DACADE15C8CCBF0033784E /* MovieDemo-Info.plist */,
+				04DACAF715C8CD150033784E /* playButton.png */,
+				04DACADF15C8CCBF0033784E /* InfoPlist.strings */,
+				04DACAE215C8CCBF0033784E /* main.m */,
+				04DACAE415C8CCBF0033784E /* MovieDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04DACAD115C8CCBF0033784E /* MovieDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04DACAF015C8CCBF0033784E /* Build configuration list for PBXNativeTarget "MovieDemo" */;
+			buildPhases = (
+				04DACACE15C8CCBF0033784E /* Sources */,
+				04DACACF15C8CCBF0033784E /* Frameworks */,
+				04DACAD015C8CCBF0033784E /* Resources */,
+				D588CCB915F5F4AB00DB2DA3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MovieDemo;
+			productName = MovieDemo;
+			productReference = 04DACAD215C8CCBF0033784E /* MovieDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04DACAC915C8CCBF0033784E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 04DACACC15C8CCBF0033784E /* Build configuration list for PBXProject "MovieDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 04DACAC715C8CCBF0033784E;
+			productRefGroup = 04DACAD315C8CCBF0033784E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04DACAD115C8CCBF0033784E /* MovieDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04DACAD015C8CCBF0033784E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DACAE115C8CCBF0033784E /* InfoPlist.strings in Resources */,
+				04DACAED15C8CCBF0033784E /* ViewController.xib in Resources */,
+				04DACAF615C8CD010033784E /* test1.mp4 in Resources */,
+				04DACAF815C8CD150033784E /* playButton.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D588CCB915F5F4AB00DB2DA3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ] || [ \"${PLATFORM_NAME}\" == \"ipados\" ]; then\n/Developer/iphoneentitlements401/gen_entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04DACACE15C8CCBF0033784E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DACAE315C8CCBF0033784E /* main.m in Sources */,
+				04DACAE715C8CCBF0033784E /* AppDelegate.m in Sources */,
+				04DACAEA15C8CCBF0033784E /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		04DACADF15C8CCBF0033784E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04DACAE015C8CCBF0033784E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		04DACAEB15C8CCBF0033784E /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04DACAEC15C8CCBF0033784E /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04DACAEE15C8CCBF0033784E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		04DACAEF15C8CCBF0033784E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04DACAF115C8CCBF0033784E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieDemo/MovieDemo-Prefix.pch";
+				INFOPLIST_FILE = "MovieDemo/MovieDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		04DACAF215C8CCBF0033784E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieDemo/MovieDemo-Prefix.pch";
+				INFOPLIST_FILE = "MovieDemo/MovieDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04DACACC15C8CCBF0033784E /* Build configuration list for PBXProject "MovieDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DACAEE15C8CCBF0033784E /* Debug */,
+				04DACAEF15C8CCBF0033784E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04DACAF015C8CCBF0033784E /* Build configuration list for PBXNativeTarget "MovieDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DACAF115C8CCBF0033784E /* Debug */,
+				04DACAF215C8CCBF0033784E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04DACAC915C8CCBF0033784E /* Project object */;
+}
